@@ -1,0 +1,1152 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VMS TCM SWP SHF PM DBG ABS PEC
+VAL_TABLE_ chargeENUM 3 "trickle charge" 2 "line current mode" 1 "battery current mode" 0 "battery voltage mode" ;
+VAL_TABLE_ VMS_SWP_setVariableCmd 22 "open/short report interval" 21 "device state report interval" 20 "window event debounce limit" 19 "voltage report interval" 18 "hazard sw sample rate" 17 "click on pulses" 16 "click period" 15 "hi beam shed duration" 14 "lo beam shed duration" 13 "debounce limit" 12 "window event startup defeat" 11 "window event threshold" 10 "window autodown hold time" 9 "lock/unlock flash on time" 8 "lock/unlock flash off time" 7 "lamp out turn signal on time" 6 "lamp out turn signal off time" 5 "turn signal on duration" 4 "turn signal off duration" 3 "abs shed duration" 2 "illumination level" 1 "interior fade duration" 0 "debug mode" ;
+VAL_TABLE_ VMS_SWP_lockState 3 "Panic" 2 "Lock Failed" 1 "Unlocked" 0 "Locked" ;
+VAL_TABLE_ VMS_SWP_keyState 2 "On" 1 "Accessory" 0 "Off" ;
+VAL_TABLE_ TCM_parkingPawl 6 "Unpark Stall" 5 "Unparked" 4 "Unparking" 3 "Park Stall" 2 "Parked" 1 "Parking" 0 "Off" ;
+VAL_TABLE_ SWP_VMS_voltageReport 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_TABLE_ pm_shiftRequest 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park" 0 "Invalid" ;
+VAL_TABLE_ pm_shiftState 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park (unused)" 0 "Invalid" ;
+VAL_TABLE_ DBG_SHF_Diag2 1 "All LEDs Off" 0 "All LEDs On" ;
+VAL_TABLE_ DBG_SHF_Diag 1 "Red" 0 "Green" ;
+VAL_TABLE_ driveConfig 3 "Unused" 2 "Unused" 1 "Sport" 0 "Base" ;
+VAL_TABLE_ evseState 5 "Pilot Fault" 4 "Fault" 3 "Charging" 2 "Connected" 1 "Idle" 0 "Unknown" ;
+VAL_TABLE_ tcmType 2 "Xtrac" 1 "Magna" 0 "no TCM" ;
+VAL_TABLE_ driveMode 5 "Tow Mode" 4 "Performance" 3 "Max Range" 2 "Full" 1 "Storage" 0 "Standard" ;
+VAL_TABLE_ chargeEnd 3 "Charge Aborted" 2 "VMS Stopped" 1 "Charge Complete" 0 "None" ;
+VAL_TABLE_ chargeMode 1 "Charge" 0 "Drive" ;
+VAL_TABLE_ TCM_shiftStage 5 "Ramp On" 4 "Ramp Off" 3 "Park" 2 "Neutral" 1 "Rev Gear" 0 "Fwd Gear" ;
+VAL_TABLE_ TCM_unParkEffort 3 "hardest" 2 "harder" 1 "hard" 0 "soft" ;
+VAL_TABLE_ TCM_parkRequest 2 "Unpark" 1 "Park" 0 "Off" ;
+VAL_TABLE_ omitecDiagMode 1 "Activate" 0 "Deactivate" ;
+VAL_TABLE_ omitecDiagCmd 128 "Activate/Deactivate Diag Mode" 4 "Brake Light Command" 2 "Pole Fan Command" 1 "Motor Fan Command" ;
+VAL_TABLE_ PECState 4 "STATE_ENABLE" 3 "STATE_FAULT" 2 "STATE_CLEAR_FAULT" 1 "STATE_STANDBY" 0 "STATE_INVALID" ;
+VAL_TABLE_ PECMode 4 "MODE_DYNO" 3 "MODE_HEATESS" 2 "MODE_CHARGE" 1 "MODE_DRIVE" 0 "MODE_UNDEF" ;
+VAL_TABLE_ TCM_gearSelection 4 "D" 3 "N" 2 "R" 1 "P" 0 "Invalid" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ CAN_Rx_FIFO_Overflow : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ EEPROM_Checksum : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ pm_shiftState : 0|4@1- (1,0) [0|0] "" Vector__XXX
+ SG_ motorCurrent : 0|16@1+ (0.062165435791,0) [0|0] "A RMS" Vector__XXX
+ SG_ I_R_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_R_led_R : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_TC_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_TC_led_R : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_SP_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_SP_led_R : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_D_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_D_led_R : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_N_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_N_led_R : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ I_P_led_G : 0|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ driveStatus : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ chargeStatus : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 118 VMS_SWP_SetVarCmd: 2 VMS
+ SG_ setVarCmdValue : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setVarCmd : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 102 VMS_SWP_StateCmd: 3 VMS
+ SG_ armed : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ DRL_enabled : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sideTurnSigalsPresent : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sideMarkersPresent : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ APS_Off : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ defeatHeadlamps : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ interiorLamp : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ repeatMessageIndicator : 15|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lockState : 8|7@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ keyState : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1408 TCM_VMS_AlertData: 3 TCM
+ SG_ unparkHallSensorMissing : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsVMS : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsDMC : 14|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsABS : 13|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_Error : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bothHallSensorsOn : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ appCRCError : 11|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ absError : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkHallSensorMissing : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkMotorOpenCircuit : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkMotorJammedUnPark : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkMotorJammedPark : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkMotorJammedMiddle : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ oilPumpOpenCircuit : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ oilPumpLowCurrent : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ oilPumpHighCurrent : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ oilPumpDriverFault : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1372 TCM_DMC_State: 4 TCM
+ SG_ parkLock : 0|3@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 992 SWP_VMS_OpenShortReport: 8 SWP
+ SG_ shortRightWondowMotor : 11|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightSideTurnSignal : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightRearTurnSignal : 14|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightLowBeamLamp : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightHighBeamLamp : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightFrontTurnSignal : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRearFogLamps : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRadio : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortMarkerLamps : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftWindowMotor : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftSideTurnSignal : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftRearTurnSignal : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftLowBeamLamp : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftHighBeamLamp : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftFrontTurnSignal : 13|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightWindowMotor : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightSideTurnSignal : 33|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightRearTurnSignal : 38|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightLowBeamLamp : 29|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightHighBeamLamp : 27|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightFrontTurnSignal : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRearFogLamps : 47|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRadio : 26|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openMarkerLamps : 31|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftWindowMotor : 34|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftSideTurnSignal : 32|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftRearTurnSignal : 36|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftLowBeamLamp : 30|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftHighBeamLamp : 28|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftFrontTurnSignal : 37|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 976 SWP_VMS_DeviceState: 8 SWP
+ SG_ rightWindowRunningUp : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightWindowRunningDown : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightTurnSignal : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightSeatHeater : 13|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rearFogLamps : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ radioOn : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ markers : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lowBeams : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lhighBeams : 11|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftWindowRunningUp : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftWindowRunningDown : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftTurnSignal : 14|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftSeatHeater : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ interiorLamp : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ hazards : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ gloveBoxLatch : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ emergPwrSense : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daytimeRunningLamps : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ absEventInProgress : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _12V_batteryTestActive : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _12V_batteryState : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 960 SWP_VMS_StatusReport: 8 SWP
+ SG_ maxCAN_Rx_num : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ curCAN_Rx_num : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultContext2 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultContext1 : 8|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ low12VBattery : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 944 SWP_VMS_VoltageReport: 8 SWP
+ SG_ _12V_voltage : 0|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ status_STBY : 54|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_12V_battery : 52|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_SRS : 50|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_12V : 48|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ _12V_battery_V : 24|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ SRS_voltage : 16|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ STBY_voltage : 8|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+
+BO_ 880 SWP_VMS_ResponseToSet: 8 SWP
+
+BO_ 640 PM_VMS_AlertData: 4 PM
+ SG_ warningWord : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultWord : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 608 PM_VMS_PM_Status: 8 PM
+ SG_ pm_shiftRequest : 32|4@1- (1,0) [0|0] "" Vector__XXX
+ SG_ pedalVoltage : 16|16@1+ (7.0721435547E-005,0.6531) [0|0] "V" Vector__XXX
+ SG_ motorSpeed : 0|16@1- (23.4375,0) [0|0] "RPM" Vector__XXX
+
+BO_ 268 SHF_DMC_ShifterState: 8 SHF
+ SG_ driveUp : 33|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TP6_Up : 36|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TP12 : 43|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TP11 : 42|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TP10 : 40|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ thermal : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_Up : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_SwitchOn : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_LED_On : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_LED_Flashing : 28|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ spareUp : 34|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_SwitchOn : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_LED_On : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_LED_Flashing : 25|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ parkUp : 46|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_SwitchOn : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_LED_On : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_LED_Flashing : 24|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ neutralUp : 32|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_SwitchOn : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_LED_On : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_LED_Flashing : 26|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ Int : 38|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_SwitchOn : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_LED_On : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_LED_Flashing : 27|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _12V : 37|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _0V : 41|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ allLedsOff : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1916 DBG_DMC_ConfigDataDownload: 8 DBG
+
+BO_ 1900 DBG_DMC_AccelTableStream: 8 DBG
+
+BO_ 1884 DBG_DMC_DLOG_req: 8 DBG
+
+BO_ 1836 DBG_DMC_SineWaveGen: 8 DBG
+
+BO_ 1812 DBG_PM_ConfigDataDownload: 8 DBG
+
+BO_ 1804 DBG_DMC_RemoteControlStream: 8 DBG
+
+BO_ 1796 DBG_PM_PLOG_req: 8 DBG
+
+BO_ 1614 DMC_DBG_1Hz_diag: 8 PEC
+
+BO_ 1582 DMC_DBG_ConfigDataUpload: 8 PEC
+
+BO_ 1566 DMC_DBG_DLOG_stream: 8 PEC
+
+BO_ 1550 DMC_DBG_10Hz_dataStream: 8 PEC
+
+BO_ 1598 DMC_DBG_Debug100Hz: 8 PEC
+
+BO_ 1948 DBG_DMC_DynoControl: 8 DBG
+
+BO_ 1868 DBG_DMC_ChargeReq: 5 DBG
+ SG_ useIrmsChgReq : 32|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ VbatChgReq : 16|16@1+ (0.0030702972412,252.669) [0|0] "V" Vector__XXX
+ SG_ IrmsChgReq : 0|16@1- (0.0050365034363,0) [0|0] "A" Vector__XXX
+
+BO_ 1794 DBG_SHF_Diag: 1 DBG
+ SG_ LED_TC_Red : 5|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LED_SP_Red : 4|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LED_R_Red : 1|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LED_P_Red : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LED_N_Red : 2|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LED_D_Red : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ AllLedsOff : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 400 SHF_VMS_AlertLog: 8 SHF
+ SG_ alertData : 16|48@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ alertIDFault : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ alertID : 0|15@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 384 SHF_VMS_AlertMatrix: 8 SHF
+ SG_ TC_switchStuck : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_LED_Problem : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_switchStuck : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_LED_Problem : 14|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_switchStuck : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_LED_Problem : 13|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_switchStuck : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_LED_Problem : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_switchStuck : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_LED_Problem : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ SupplyVoltage5V : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_switchProblem : 11|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ D_switchProblem : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ N_switchProblem : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ R_switchProblem : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ P_switchProblem : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ SPI_Rx_Error : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ SPI_Tx_Error : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsTCM : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsDMC : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lostCommsVMS : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ badCANRx : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ APSVoltage : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 284 SHF_DMC_Measurements: 8 SHF
+ SG_ I_P_led_R : 16|4@1- (3.125,0) [0|0] "mA" Vector__XXX
+ SG_ psu_5V : 8|8@1+ (0.0390625,0) [0|0] "V" Vector__XXX
+ SG_ APSvoltage : 0|8@1- (0.05859375,0) [0|0] "V" Vector__XXX
+
+BO_ 1632 DMC_VMS_AlertData4: 8 PEC
+ SG_ warnW7 : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ warnW6 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW7 : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW6 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1760 DMC_VMS_AlertData3: 8 PEC
+ SG_ warnW5 : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ warnW4 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ warnW3 : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ warnW2 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1744 DMC_VMS_AlertData2: 8 PEC
+ SG_ warnW1 : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ warnW0 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW5 : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW4 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1728 DMC_VMS_AlertData1: 8 PEC
+ SG_ faultW1 : 16|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW3 : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW2 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultW0 : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1584 DMC_VMS_PemStatus2: 8 PEC
+ SG_ driveConfig : 36|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ evseAccept : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ evseState : 32|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ibOffset : 24|8@1- (0.09375,0) [0|0] "A" Vector__XXX
+ SG_ iaOffset : 16|8@1- (0.09375,0) [0|0] "A" Vector__XXX
+ SG_ VLine2 : 0|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+
+BO_ 188 VMS_DMC_DriveLimit: 6 VMS
+ SG_ maxTorqueLimit : 40|8@1+ (1.5625,0) [0|0] "Nm" Vector__XXX
+ SG_ maxPowerLimit : 32|8@1+ (0.9765625,0) [0|0] "kW" Vector__XXX
+ SG_ maxIBatLimit : 16|16@1+ (0.01220703125,0) [0|0] "A" Vector__XXX
+ SG_ maxWheelSpeed : 0|16@1+ (0.005,0) [0|0] "KPH" Vector__XXX
+
+BO_ 172 VMS_DMC_BatStatus: 8 VMS
+ SG_ voltage : 48|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+ SG_ minVBrick : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ maxVBrick : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ current : 32|16@1- (0.0244140625,0) [0|0] "A" Vector__XXX
+
+BO_ 156 VMS_DMC_BatLimit: 8 VMS
+ SG_ maxVBatLimit : 32|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+ SG_ minVBatLimit : 48|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+ SG_ minVBrickLimit : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ maxVBrickLimit : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 140 VMS_DMC_VmsBools: 6 VMS
+ SG_ countryCode : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ILineTarget : 32|8@1- (1,0) [0|0] "A" Vector__XXX
+ SG_ dynoRegenMode : 28|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ tcmType : 25|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ apsGoingDown : 24|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ driveMode : 20|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ contactorsClosed : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ handBrake : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ regenDisable : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargePortOpen : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargePortLEDInhibit : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargeEnd : 8|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ batteryHeater : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargeMode : 6|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ softStart : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargeAbort : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lowPowerChargeMode : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ clearFaults : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 130 VMS_SHF_Dimmer: 1 VMS
+ SG_ dimmerValue : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1600 DMC_VMS_VCmdCpldVer: 8 PEC
+ SG_ cpldSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cpldMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cpldMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1568 DMC_VMS_VCmdProtocol: 8 PEC
+ SG_ minute : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ hour : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ mday : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ month : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ year : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1552 DMC_VMS_VCmdCpuId: 8 PEC
+ SG_ hardwareId : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 544 PM_VMS_VCmdProtocol: 8 PM
+ SG_ minute : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ hour : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ mday : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ month : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ year : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 528 PM_VMS_VCmdCpuId: 8 PM
+ SG_ hardwareId : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 288 SHF_VMS_VCmdProtocol: 8 SHF
+ SG_ minute : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ hour : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ mday : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ month : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ year : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ protoMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 272 SHF_VMS_VCmdCpuId: 8 SHF
+ SG_ hardwareId : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1536 DMC_VMS_VCmdVersion: 8 PEC
+ SG_ buildFlags : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootSubMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1024 CPLD_VMS_VCmdVersion: 8 Vector__XXX
+ SG_ buildFlags : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootSubMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 768 SWP_VMS_VCmdVersion: 8 SWP
+ SG_ buildFlags : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootSubMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 512 PM_VMS_VCmdVersion: 8 PM
+ SG_ buildFlags : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootSubMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 256 SHF_VMS_VCmdVersion: 8 SHF
+ SG_ buildFlags : 48|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootSubMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 76 VMS_DMC_VCmd4: 0 VMS
+
+BO_ 92 VMS_DMC_VCmd5: 0 VMS
+
+BO_ 84 VMS_PM_VCmd5: 0 VMS
+
+BO_ 60 VMS_DMC_VCmd3: 0 VMS
+
+BO_ 56 VMS_CPLD_VCmd3: 0 VMS
+
+BO_ 52 VMS_PM_VCmd3: 0 VMS
+
+BO_ 54 VMS_SWP_VCmd3: 0 VMS
+
+BO_ 44 VMS_DMC_VCmd2: 0 VMS
+
+BO_ 36 VMS_PM_VCmd2: 0 VMS
+
+BO_ 28 VMS_DMC_VCmd1: 0 VMS
+
+BO_ 20 VMS_PM_VCmd1: 0 VMS
+
+BO_ 12 VMS_DMC_VCmd0: 0 VMS
+
+BO_ 8 VMS_CPLD_VCmd0: 0 VMS
+
+BO_ 4 VMS_PM_VCmd0: 0 VMS
+
+BO_ 6 VMS_SWP_VCmd0: 0 VMS
+
+BO_ 82 VMS_SHF_VCmd5: 0 VMS
+
+BO_ 50 VMS_SHF_VCmd3: 0 VMS
+
+BO_ 34 VMS_SHF_VCmd2: 0 VMS
+
+BO_ 18 VMS_SHF_VCmd1: 0 VMS
+
+BO_ 2 VMS_SHF_VCmd0: 0 VMS
+
+BO_ 240 VMS_VMS_Broadcast: 8 VMS
+ SG_ Car_SubMinor_Version m38 : 32|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ Car_Minor_Version m38 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ Car_Major_Version m38 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VBT_VIN2 m34 : 8|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VBT_VIN1 m33 : 8|56@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VMS_VMS_Broadcast_ M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VBT_Timestamp m1 : 16|24@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1626 DMC_TCM_Shift: 8 PEC
+ SG_ aps12V : 55|16@0+ (1,0) [0|0] "V" Vector__XXX
+ SG_ shiftStage : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ motorTorque : 32|8@1- (0.78125,0) [0|0] "%" Vector__XXX
+ SG_ motorRPM : 23|16@0- (0.45776367188,0) [0|0] "RPM" Vector__XXX
+ SG_ requestTorque : 8|8@1- (0.78125,0) [0|0] "%" Vector__XXX
+ SG_ towMode : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ waitForBrake : 4|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ unParkEffort : 2|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ parkRequest : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1646 DMC_DBG_DynoStatus: 8 PEC
+ SG_ poleCTemp : 16|8@1+ (0.48828125,0) [0|0] "Deg C" Vector__XXX
+ SG_ poleBTemp : 8|8@1+ (0.48828125,0) [0|0] "Deg C" Vector__XXX
+ SG_ poleATemp : 0|8@1+ (0.48828125,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 1820 DMC_OmitecCmd: 2 PEC
+ SG_ diagParameter : 9|7@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ diagMode : 8|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ diagCmd : 0|8@1- (1,0) [0|0] "" Vector__XXX
+
+BO_ 1630 DMC_OmitecStatus: 2 PEC
+ SG_ diagModeInhibited : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ brakeLightModeInhibited : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ poleFanModeInhibited : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ motorFanModeInhibited : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ diagModeActive : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ brakeLightModeEnabled : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ poleFanModeEnabled : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ motorFanModeEnabled : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1152 FAN_VMS_Status: 8 Vector__XXX
+ SG_ ambientTemp : 56|8@1- (0.78125,-40) [0|0] "Deg C" Vector__XXX
+ SG_ LCMCTemp : 48|8@1- (0.78125,-40) [0|0] "Deg C" Vector__XXX
+ SG_ motorFanPWM : 40|8@1- (0.7874015748,0) [0|0] "%" Vector__XXX
+ SG_ motorFanI : 32|8@1- (0.048875855,0) [0|0] "A" Vector__XXX
+ SG_ motorFanV : 24|8@1+ (0.078755,0) [0|0] "V" Vector__XXX
+ SG_ poleFanPWM : 16|8@1+ (0.7874015748,0) [0|0] "%" Vector__XXX
+ SG_ poleFanI : 8|8@1+ (0.048875855,0) [0|0] "A" Vector__XXX
+ SG_ poleFanV : 0|8@1+ (0.078755,0) [0|0] "V" Vector__XXX
+
+BO_ 416 ABS_Status: 8 ABS
+ SG_ checksum : 56|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ counter : 52|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ diagMode : 15|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ brakeLightSW : 11|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ brakeContLamp : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ BLDLamp : 9|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ warnLamp : 8|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ activeEBD : 7|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ activeEDL : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ activeABS : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ BLDSwitch : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ failureEntry : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1184 ABS_WheelSpeed: 8 ABS
+ SG_ rearRight : 49|15@1+ (0.006213712,0) [0|0] "MPH" Vector__XXX
+ SG_ rearLeft : 33|15@1+ (0.006213712,0) [0|0] "MPH" Vector__XXX
+ SG_ frontRight : 17|15@1+ (0.006213712,0) [0|0] "MPH" Vector__XXX
+ SG_ frontLeft : 1|15@1+ (0.006213712,0) [0|0] "MPH" Vector__XXX
+
+BO_ 1776 DMC_VMS_AlertLog: 8 PEC
+ SG_ alertIDFault : 15|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ alertID : 0|15@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ alertData : 16|48@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1696 DMC_VMS_PemStatus: 8 PEC
+ SG_ newTiresLearning : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ VBat : 48|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+ SG_ rotorTemp : 40|8@1+ (1.5625,0) [0|0] "Deg C" Vector__XXX
+ SG_ poleAccLimit : 36|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ performanceReady : 38|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ESSAccLimit : 37|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ rotorAccLimit : 35|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ powerLimitLight : 34|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ immobilized : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ TCDisabledBySwitch : 32|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pedalPos : 16|8@1+ (0.390625,0) [0|0] "%" Vector__XXX
+ SG_ PECState : 13|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cruiseR : 12|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cruiseI : 11|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ leverPos : 8|3@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PECMode : 4|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cruiseO : 3|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ shiftState : 0|3@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1712 DMC_VMS_Motor: 8 PEC
+ SG_ phaseCTemp : 56|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ phaseBTemp : 48|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ phaseATemp : 40|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ motor2Temp : 32|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ motor1Temp : 24|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ motorTemp : 16|8@1+ (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ motorCurrent : 0|16@1+ (0.015258789063,0) [0|0] "A" Vector__XXX
+
+BO_ 1680 DMC_VMS_Drive: 8 PEC
+ SG_ cruiseActive : 36|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ batteryCurrentLimitActive : 47|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ motorControlLimitActive : 46|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ VMS_limitActive : 45|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_limitActive : 44|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ thermalLimitActive : 43|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ speedLimitActive : 42|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ highVoltageLimit : 41|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lowVoltageLimit : 40|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ transDiffLimitActive : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ TC_disabled : 38|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ keySwitchOn : 37|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ regenBrakeLight : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ brakePedal : 34|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ F_R_torqueDir : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ D_G_torqueDir : 32|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ vehicleSpeed : 48|16@1+ (0.1,0) [0|0] "MPH" Vector__XXX
+ SG_ motorTorque : 16|16@1+ (0.006103515625,0) [0|0] "Nm" Vector__XXX
+ SG_ motorRPM : 0|16@1- (0.45776367188,0) [0|0] "RPM" Vector__XXX
+
+BO_ 1664 DMC_VMS_Charge: 8 PEC
+ SG_ AC_50Hz_line_conected : 48|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargeENUM : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ pilotlessCharge : 59|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lowMinBrick : 58|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ logVmsChgStatus : 55|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ chargeEnd : 53|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ chargingActive : 52|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ EVSE_pilotFault : 51|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ batteryHeaterEnabled : 50|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ pilotValid : 49|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ IAvail : 40|8@1- (1,0) [0|0] "A" Vector__XXX
+ SG_ IRef : 32|8@1- (1,0) [0|0] "A" Vector__XXX
+ SG_ VLine : 16|16@1+ (0.0076293945313,0) [0|0] "V" Vector__XXX
+ SG_ ILine : 0|16@1+ (0.0030517578125,0) [0|0] "A" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 CAN_Rx_FIFO_Overflow "CAN RX FIFO Overflow";
+CM_ SG_ 3221225472 EEPROM_Checksum "EEPROM Checksum error";
+CM_ SG_ 3221225472 pm_shiftState "PM Shift State. Bit field values 0-4 are:
+0	 Invalid
+1	 Park (not used, shows Neutral instead)
+2	 Reverse
+3	 Neutral
+4	 Forward";
+CM_ SG_ 3221225472 motorCurrent "16-bit unsigned motor current. Units are 2037.0370/32768 Arms";
+CM_ SG_ 3221225472 I_R_led_G "Reverse Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_R_led_R "Reverse Red led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_TC_led_G "TC Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_TC_led_R "TC Red led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_SP_led_G "Spare Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_SP_led_R "Spare Red led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_D_led_G "Drive Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_D_led_R "Drive Red led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_N_led_G "Neutral Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_N_led_R "Neutral Red led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 I_P_led_G "Park Green led Current 1 count = 3.125mA";
+CM_ SG_ 3221225472 driveStatus "Drive status bits";
+CM_ SG_ 3221225472 chargeStatus "Charge status bits";
+CM_ SG_ 102 DRL_enabled "Daylight Running Lights enabled";
+CM_ SG_ 102 sideMarkersPresent "Side Markers present";
+CM_ SG_ 102 APS_Off "APS Off";
+CM_ SG_ 102 defeatHeadlamps "defeat headlamps";
+CM_ SG_ 102 interiorLamp "Interior Lamp state: 0=Off, 1=On";
+CM_ SG_ 102 repeatMessageIndicator "VMS ? SWP: State Command Repeat Message indicator bit";
+CM_ SG_ 102 lockState "Lock State: 0=Locked, 1=Unlocked, 2=Lock Failed, 3=Panic";
+CM_ SG_ 102 keyState "Key State:  0=Off, 1=Accessory, 2=On";
+CM_ SG_ 1408 lostCommsVMS "Warning 3 - Lost Comms VMS";
+CM_ SG_ 1408 lostCommsDMC "Warning 4 - Lost Comms DMC";
+CM_ SG_ 1372 parkLock "Parking pawl status (0=Off, 1=Parking, 2=Parked, 3=Park Stall, 4=Unparking, 5=Unparked, 6=Unpark Stall, 7=Unused)";
+CM_ SG_ 992 shortRightWondowMotor "Short Circuit Indicator";
+CM_ SG_ 992 shortRightSideTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 shortRightRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 shortRightLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 992 shortRightHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 992 shortRightFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 shortRearFogLamps "Short Circuit Indicator";
+CM_ SG_ 992 shortRadio "Short Circuit Indicator";
+CM_ SG_ 992 shortMarkerLamps "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftWindowMotor "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftSideTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 992 shortLeftFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 992 openRightWindowMotor "Open Circuit Indicator";
+CM_ SG_ 992 openRightSideTurnSignal "Open Circuit Indicator";
+CM_ SG_ 992 openRightRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 992 openRightLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 992 openRightHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 992 openRightFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 992 openRearFogLamps "Open Circuit Indicator";
+CM_ SG_ 992 openRadio "Open Circuit Indicator";
+CM_ SG_ 992 openMarkerLamps "Open Circuit Indicator";
+CM_ SG_ 992 openLeftWindowMotor "Open Circuit Indicator";
+CM_ SG_ 992 openLeftSideTurnSignal "Open Circuit Indicator";
+CM_ SG_ 992 openLeftRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 992 openLeftLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 992 openLeftHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 992 openLeftFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 976 rightWindowRunningUp "(1=Device active)  rightWindowRunningUp";
+CM_ SG_ 976 rightWindowRunningDown "(1=Device active)  rightWindowRunningDown";
+CM_ SG_ 976 rightTurnSignal "(1=Device active)  right turn signal active";
+CM_ SG_ 976 rightSeatHeater "(1=Device active)  right seat heater active";
+CM_ SG_ 976 rearFogLamps "(1=Device active)  rear fog lamps";
+CM_ SG_ 976 radioOn "(1=Device active)  radio on";
+CM_ SG_ 976 markers "(1=Device active)  markers";
+CM_ SG_ 976 lowBeams "(1=Device active)  ";
+CM_ SG_ 976 lhighBeams "(1=Device active)  high beams active";
+CM_ SG_ 976 leftWindowRunningUp "(1=Device active)  leftWindowRunningUp";
+CM_ SG_ 976 leftWindowRunningDown "(1=Device active)  leftWindowRunningDown";
+CM_ SG_ 976 leftTurnSignal "(1=Device active)  left turn signal active";
+CM_ SG_ 976 leftSeatHeater "(1=Device active)  left seat heater active";
+CM_ SG_ 976 interiorLamp "(1=Device active)  interior lamp active";
+CM_ SG_ 976 hazards "(1=Device active)  hazards";
+CM_ SG_ 976 gloveBoxLatch "(1=Device active)  glove box latch";
+CM_ SG_ 976 emergPwrSense "(1=Device active)  emerg pwr sense input active";
+CM_ SG_ 976 daytimeRunningLamps "(1=Device active)  daytime running lamps";
+CM_ SG_ 976 absEventInProgress "(1=Device active)  abs event in progress";
+CM_ SG_ 976 _12V_batteryTestActive "(1=Device active)  12v battery test in progress";
+CM_ SG_ 976 _12V_batteryState "(1=Device active)  12v battery state";
+CM_ SG_ 960 maxCAN_Rx_num "max CAN RX FIFO number of entries";
+CM_ SG_ 960 curCAN_Rx_num "current CAN RX FIFO number of entries";
+CM_ SG_ 960 faultContext2 "fault context, in order of priority (least first), little-endian
+•	EE checksum, EEPROM for fault bit 1
+•	battery voltage limit for fault bit 0
+•	C1RXOVF register for CAN RX HW overflow (fault bit 2)
+•	open/short limit for O/S bytes 0..3
+";
+CM_ SG_ 960 faultContext1 "fault context, in order of priority (least first), little-endian
+•	EE checksum, RAM for fault bit 1
+•	measured battery voltage for fault bit 0
+•	C1RXFUL register for CAN RX HW overflow (fault bit 2)
+•	measured open/short value for O/S bytes 0..3
+";
+CM_ SG_ 960 low12VBattery "Low 12V Battery indication";
+CM_ SG_ 944 status_STBY "Standby Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 944 status_12V_battery "12V Battery Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 944 status_SRS "SRS Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 944 status_12V "+12V Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 944 _12V_battery_V "12V Battery voltage (5.3 format)";
+CM_ SG_ 944 SRS_voltage "SRS voltage (5.3 format)";
+CM_ SG_ 944 STBY_voltage "STBY voltage (5.3 format)";
+CM_ SG_ 608 pm_shiftRequest "PM Shift Request. Bit field values 0-4 are:
+0	 Invalid
+1	 Park
+2	 Reverse
+3	 Neutral
+4	 Forward";
+CM_ SG_ 608 pedalVoltage "16-bit unsigned accel pedal voltage. Units are 4.6348/65536 + 0.6531 V";
+CM_ SG_ 608 motorSpeed "16-bit signed motor speed. Units are 12000/512 RPM";
+CM_ SG_ 268 driveUp "Raw SPI data from Switch Scan chip        Drive Up";
+CM_ SG_ 268 TP6_Up "Raw SPI data from Switch Scan chip        TP6 Up";
+CM_ SG_ 268 TP12 "Raw SPI data from Switch Scan chip        TP12";
+CM_ SG_ 268 TP11 "Raw SPI data from Switch Scan chip        TP11";
+CM_ SG_ 268 TP10 "Raw SPI data from Switch Scan chip        TP10";
+CM_ SG_ 268 thermal "Raw SPI data from Switch Scan chip        Thermal";
+CM_ SG_ 268 TC_Up "Raw SPI data from Switch Scan chip        TC Up";
+CM_ SG_ 268 TC_SwitchOn "Shifter Command to DMC        T Switch   1 = On ";
+CM_ SG_ 268 TC_LED_On "Shifter Led On/Off State Readback        T LED   1 = On ";
+CM_ SG_ 268 TC_LED_Flashing "Shifter Led Flash State Readback        T LED   1 = Flashing";
+CM_ SG_ 268 spareUp "Raw SPI data from Switch Scan chip        Spare Up";
+CM_ SG_ 268 R_SwitchOn "Shifter Command to DMC        R Switch   1 = On ";
+CM_ SG_ 268 R_LED_On "Shifter Led On/Off State Readback        R LED   1 = On ";
+CM_ SG_ 268 R_LED_Flashing "Shifter Led Flash State Readback        R LED   1 = Flashing";
+CM_ SG_ 268 parkUp "Raw SPI data from Switch Scan chip        Park Up";
+CM_ SG_ 268 P_SwitchOn "Shifter Command to DMC        P Switch   1 = On";
+CM_ SG_ 268 P_LED_On "Shifter Led On/Off State Readback        P LED   1 = On";
+CM_ SG_ 268 P_LED_Flashing "Shifter Led Flash State Readback        P LED   1 = Flashing";
+CM_ SG_ 268 neutralUp "Raw SPI data from Switch Scan chip        Neutral Up";
+CM_ SG_ 268 N_SwitchOn "Shifter Command to DMC        N Switch   1 = On ";
+CM_ SG_ 268 N_LED_On "Shifter Led On/Off State Readback        N LED   1 = On ";
+CM_ SG_ 268 N_LED_Flashing "Shifter Led Flash State Readback        N LED   1 = Flashing";
+CM_ SG_ 268 Int "Raw SPI data from Switch Scan chip        Int";
+CM_ SG_ 268 D_SwitchOn "Shifter Command to DMC        D Switch   1 = On ";
+CM_ SG_ 268 D_LED_On "Shifter Led On/Off State Readback        D LED   1 = On ";
+CM_ SG_ 268 D_LED_Flashing "Shifter Led Flash State Readback        D LED   1 = Flashing";
+CM_ SG_ 268 _12V "Raw SPI data from Switch Scan chip        12V";
+CM_ SG_ 268 _0V "Raw SPI data from Switch Scan chip        0V";
+CM_ SG_ 268 allLedsOff "1 = All LEDs off due to key off";
+CM_ BO_ 1916 "The Config Data Download stream is used by the DMC LabVIEW GUI to set new configuration data or to request a Config Upload stream from the DMC. ";
+CM_ BO_ 1900 "The Accelerator Tables stream is used by the DMC LabVIEW GUI to download accelerator pedal response parameters to the DMC.";
+CM_ BO_ 1884 "The DLOG Request message is used by the DMC LabVIEW GUI to request DLOG samples to be taken and sent out via the DLOG Data Stream.";
+CM_ BO_ 1836 "The Sine Wave Generator message is used by the DMC LabVIEW GUI during testing to set motor voltage frequency and amplitude when the DMC is in open loop mode.";
+CM_ BO_ 1812 "The Config Data Download stream is used by the DMC LabVIEW GUI to set new configuration data or to request a Config Upload stream from the PM.";
+CM_ BO_ 1804 "The Remote Control stream is used by the DMC LabVIEW GUI during testing to control basic DMC functions.";
+CM_ BO_ 1796 "The PLOG Request message is used by the DMC LabVIEW GUI to request PLOG samples to be taken and sent out via the PLOG Data Stream.";
+CM_ BO_ 1614 "This diagnostic message contains different data from release to release and is used by the DMC firmware team to debug problems that arise in the field.";
+CM_ BO_ 1582 "The Config Data Upload stream contains configuration data for display in the DMC LabVIEW GUI.  It is sent in response to a Config Data Download stream when the download stream contains only the 2-byte tag and no data.";
+CM_ BO_ 1566 "The DLOG Data stream contains data samples for the DLOG display in the DMC LabVIEW GUI.  It is sent out once or periodically in response to a DLOG request.";
+CM_ BO_ 1550 "The 10 Hz Debugging stream is sent out at 10Hz when debug mode is enabled. It is used primarily by the DMC LabVIEW GUI to display internal DMC status.";
+CM_ BO_ 1598 "This diagnostic message contains different data from release to release and is used by the DMC firmware team to debug problems that arise in the field.";
+CM_ BO_ 1948 "The Dyno Control message is used in the DMC dyno build by the motor dyno to control the PEMs in motor testing. This message is also used in the DMC production build to enable debug mode.";
+CM_ BO_ 1868 "The Charge Request message is used by the DMC LabVIEW GUI during testing to control DMC charging functions.";
+CM_ SG_ 1868 useIrmsChgReq "TRUE to use RMS current request.  Must repeat message with at least 1 second intervals to assert this Boolean (10Hz is good).  FALSE just records the current request for possible use by other firmware systems.";
+CM_ SG_ 1868 VbatChgReq "16-bit unsigned battery voltage charge request.  Units 201.215/65536 + 252.669 V";
+CM_ SG_ 1868 IrmsChgReq "16-bit signed RMS current charge request.  Units 165.0361446/32768 Amps RMS";
+CM_ SG_ 1794 LED_TC_Red "TC LED             0 = Green,    1 = Red";
+CM_ SG_ 1794 LED_SP_Red "Spare LED         0 = Green,    1 = Red";
+CM_ SG_ 1794 LED_R_Red "Reverse LED     0 = Green,    1 = Red";
+CM_ SG_ 1794 LED_P_Red "Park LED           0 = Green,    1 = Red";
+CM_ SG_ 1794 LED_N_Red "Neutral LED      0 = Green,    1 = Red";
+CM_ SG_ 1794 LED_D_Red "Drive LED         0 = Green,    1 = Red";
+CM_ SG_ 1794 AllLedsOff "AllOff                0 = All Leds On,   1 = All Leds Off";
+CM_ SG_ 400 alertData "Alert Data";
+CM_ SG_ 400 alertIDFault "TRUE if alert ID is a fault";
+CM_ SG_ 400 alertID "Alert ID";
+CM_ SG_ 384 TC_switchStuck "Warning 23 - TC Switch stuck down";
+CM_ SG_ 384 TC_LED_Problem "Warning 18 - TC LED Problem";
+CM_ SG_ 384 R_switchStuck "Warning 20 - R Switch stuck down";
+CM_ SG_ 384 R_LED_Problem "Warning 15 - R LED Problem";
+CM_ SG_ 384 P_switchStuck "Warning 19 - P Switch stuck down";
+CM_ SG_ 384 P_LED_Problem "Warning 14 - P LED Problem";
+CM_ SG_ 384 N_switchStuck "Warning 21 - N Switch stuck down";
+CM_ SG_ 384 N_LED_Problem "Warning 16 - N LED Problem ";
+CM_ SG_ 384 D_switchStuck "Warning 22 - D Switch stuck down";
+CM_ SG_ 384 D_LED_Problem "Warning 17 - D LED Problem";
+CM_ SG_ 384 SupplyVoltage5V "Warning 13 - 5V Supply Voltage";
+CM_ SG_ 384 TC_switchProblem "Warning 12- T Switch problem (Stuck Down, open circuit)";
+CM_ SG_ 384 D_switchProblem "Warning 11- D Switch problem (Stuck Down, open circuit)";
+CM_ SG_ 384 N_switchProblem "Warning 10- N Switch problem (Stuck Down, open circuit)";
+CM_ SG_ 384 R_switchProblem "Warning 9 - R Switch problem (Stuck Down, open circuit)";
+CM_ SG_ 384 P_switchProblem "Warning 8 - P Switch problem (Stuck Down, open circuit)";
+CM_ SG_ 384 SPI_Rx_Error "Warning 7 - SPI Rx error";
+CM_ SG_ 384 SPI_Tx_Error "Warning 6 - SPI Tx error";
+CM_ SG_ 384 lostCommsTCM "Warning 5 - Lost Comms TCM";
+CM_ SG_ 384 lostCommsDMC "Warning 4 - Lost Comms DMC";
+CM_ SG_ 384 lostCommsVMS "Warning 3 - Lost Comms VMS";
+CM_ SG_ 384 badCANRx "Warning 2 - Bad CAN Rx";
+CM_ SG_ 384 APSVoltage "Warning 1 - APS Voltage";
+CM_ SG_ 284 I_P_led_R "Park Red led Current 1 count = 3.125mA";
+CM_ SG_ 284 psu_5V "5V Supply Voltage 1 count = 39.0625 mV";
+CM_ SG_ 284 APSvoltage "APS Voltage 1 count = 58.59375mV";
+CM_ SG_ 1632 warnW7 "Warning Word 7";
+CM_ SG_ 1632 warnW6 "Warning Word 6";
+CM_ SG_ 1632 faultW7 "Fault Word 7";
+CM_ SG_ 1632 faultW6 "Fault Word 6";
+CM_ SG_ 1760 warnW5 "Warning Word 5";
+CM_ SG_ 1760 warnW4 "Warning Word 4";
+CM_ SG_ 1760 warnW3 "Warning Word 3";
+CM_ SG_ 1760 warnW2 "Warning Word 2";
+CM_ SG_ 1744 warnW1 "Warning Word 1";
+CM_ SG_ 1744 warnW0 "Warning Word 0";
+CM_ SG_ 1744 faultW5 "Fault Word 5";
+CM_ SG_ 1744 faultW4 "Fault Word 4";
+CM_ SG_ 1728 faultW1 "Fault Word 1";
+CM_ SG_ 1728 faultW3 "Fault Word 3";
+CM_ SG_ 1728 faultW2 "Fault Word 2";
+CM_ SG_ 1728 faultW0 "Fault Word 0";
+CM_ SG_ 1584 driveConfig "Drive Configuration: 0 = Base, 1 = Sport, 2 = unused, 3 = unused";
+CM_ SG_ 1584 evseAccept "EVSE Accept: 0=inactive, 1=active";
+CM_ SG_ 1584 evseState "EVSE State (values 6,7 are unused): 0=Unknown,1=Idle, 2=Connected, 3=Charging, 4=Fault, 5=Pilot Fault
+";
+CM_ SG_ 1584 ibOffset "8-bit signed phase-B PCS Offset.  Units 12/128 A";
+CM_ SG_ 1584 iaOffset "8-bit signed phase-A PCS Offset.  Units 12/128 A.";
+CM_ SG_ 1584 VLine2 "16-bit unsigned line2 voltage measurement. Units 500/65536 V";
+CM_ SG_ 188 maxTorqueLimit "8-bit unsigned VMS specified torque limit. Units 400/256 Nm";
+CM_ SG_ 188 maxPowerLimit "8-bit unsigned VMS specified power limit. Units 250/256 kW";
+CM_ SG_ 188 maxIBatLimit "16-bit unsigned maximum battery current limit. Units 800/65536 A ";
+CM_ SG_ 188 maxWheelSpeed "16-bit unsigned wheel speed limit. ABS units 0.005 kph";
+CM_ SG_ 172 voltage "16-bit unsigned battery voltage: Units 500/65536 V ";
+CM_ SG_ 172 minVBrick "16-bit unsigned minimum Brick voltage:  Units 8/65536 V ";
+CM_ SG_ 172 maxVBrick "16-bit unsigned maximum Brick voltage:  Units 8/65536 V";
+CM_ SG_ 172 current "16-bit signed battery current: Units 800/32768 A ";
+CM_ SG_ 156 maxVBatLimit "16-bit unsigned maximum battery voltage run limit: Units 500/65536 V ";
+CM_ SG_ 156 minVBatLimit "16-bit unsigned minimum battery voltage run limit: Units 500/65536 V ";
+CM_ SG_ 156 minVBrickLimit "16-bit unsigned minimum brick voltage charge limit: Units 8/65536 V ";
+CM_ SG_ 156 maxVBrickLimit "16-bit unsigned maximum brick voltage charge limit: Units 8/65536 V ";
+CM_ SG_ 140 countryCode "Country Code enum";
+CM_ SG_ 140 ILineTarget "ILineTarget Target line current in charging, negative is charge, positive is discharge. Scaled at 1A/bit";
+CM_ SG_ 140 dynoRegenMode "Dyno Regen Mode: 1 = Allow regen even with ABS errors";
+CM_ SG_ 140 tcmType "TCM Type: 0 = no tcm, 1 = magna, 2=xtrac, 3=unused";
+CM_ SG_ 140 apsGoingDown "APS going down = 1";
+CM_ SG_ 140 driveMode "Drive Mode Enum: 0=Standard 1=Storage 2=Full 3=Max Range 4=Performance 5=Tow Mode";
+CM_ SG_ 140 contactorsClosed "CC: Ess contactors closed, 1 is closed";
+CM_ SG_ 140 handBrake "HB: Hand brake, 1 is on";
+CM_ SG_ 140 regenDisable "RD: regen disable, 1 is disable";
+CM_ SG_ 140 chargePortOpen "Charge Door Open 1 = Open  0 = Closed (raw door state from vms)";
+CM_ SG_ 140 chargePortLEDInhibit "Charge Port LED Inhibit = 1";
+CM_ SG_ 140 chargeEnd "Charge End ENUM 0- None 1- Charge Complete (Green) 2- VMS Stopped (Blue) 3- Charge Aborted (Red)";
+CM_ SG_ 140 batteryHeater "BH: Battery heater enable, 1 to turn on (disables charge)";
+CM_ SG_ 140 chargeMode "VMS Charge Mode 1 = Charge  0 = Drive    (used to be charge door)";
+CM_ SG_ 140 softStart "SS: Soft start to commence charging";
+CM_ SG_ 140 chargeAbort "AB: VMS charge abort / RED Charge Port Led";
+CM_ SG_ 140 lowPowerChargeMode "LP: Low power charge mode if set";
+CM_ SG_ 140 clearFaults "CF: Clear faults (1)";
+CM_ SG_ 130 dimmerValue "Dimmer Value 0 - 100%";
+CM_ SG_ 1600 cpldSubMinor "CPLD Firmware Sub-minor Number";
+CM_ SG_ 1600 cpldMinor "CPLD Firmware Minor Number";
+CM_ SG_ 1600 cpldMajor "CPLD Firmware Major Number";
+CM_ SG_ 1568 minute "Compile Date Minute (0 – 59)";
+CM_ SG_ 1568 hour "Compile Date Hour (0 – 23)";
+CM_ SG_ 1568 mday "Compile Date Day (1 – 31)";
+CM_ SG_ 1568 month "Compile Date Month (1 – 12)";
+CM_ SG_ 1568 year "Compile Date Year - 2000";
+CM_ SG_ 1568 protoSubMinor "Software Protocol Sub-minor Number";
+CM_ SG_ 1568 protoMinor "Software Protocol Minor Number";
+CM_ SG_ 1568 protoMajor "Software Protocol Major Number";
+CM_ SG_ 1552 hardwareId "SHF hardware ID.  Zero padded string “SH-R20”";
+CM_ SG_ 544 minute "Compile Date Minute (0 – 59)";
+CM_ SG_ 544 hour "Compile Date Hour (0 – 23)";
+CM_ SG_ 544 mday "Compile Date Day (1 – 31)";
+CM_ SG_ 544 month "Compile Date Month (1 – 12)";
+CM_ SG_ 544 year "Compile Date Year - 2000";
+CM_ SG_ 544 protoSubMinor "Software Protocol Sub-minor Number";
+CM_ SG_ 544 protoMinor "Software Protocol Minor Number";
+CM_ SG_ 544 protoMajor "Software Protocol Major Number";
+CM_ SG_ 528 hardwareId "SHF hardware ID.  Zero padded string “SH-R20”";
+CM_ SG_ 288 minute "Compile Date Minute (0 – 59)";
+CM_ SG_ 288 hour "Compile Date Hour (0 – 23)";
+CM_ SG_ 288 mday "Compile Date Day (1 – 31)";
+CM_ SG_ 288 month "Compile Date Month (1 – 12)";
+CM_ SG_ 288 year "Compile Date Year - 2000";
+CM_ SG_ 288 protoSubMinor "Software Protocol Sub-minor Number";
+CM_ SG_ 288 protoMinor "Software Protocol Minor Number";
+CM_ SG_ 288 protoMajor "Software Protocol Major Number";
+CM_ SG_ 272 hardwareId "SHF hardware ID.  Zero padded string “SH-R20”";
+CM_ SG_ 1536 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 1536 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 1536 bootMinor "Bootloader Minor Number";
+CM_ SG_ 1536 bootMajor "Bootloader Major Number";
+CM_ SG_ 1536 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 1536 appMinor "Software Minor Number";
+CM_ SG_ 1536 appMajor "Software Major Number";
+CM_ SG_ 1024 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 1024 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 1024 bootMinor "Bootloader Minor Number";
+CM_ SG_ 1024 bootMajor "Bootloader Major Number";
+CM_ SG_ 1024 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 1024 appMinor "Software Minor Number";
+CM_ SG_ 1024 appMajor "Software Major Number";
+CM_ SG_ 768 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 768 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 768 bootMinor "Bootloader Minor Number";
+CM_ SG_ 768 bootMajor "Bootloader Major Number";
+CM_ SG_ 768 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 768 appMinor "Software Minor Number";
+CM_ SG_ 768 appMajor "Software Major Number";
+CM_ SG_ 512 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 512 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 512 bootMinor "Bootloader Minor Number";
+CM_ SG_ 512 bootMajor "Bootloader Major Number";
+CM_ SG_ 512 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 512 appMinor "Software Minor Number";
+CM_ SG_ 512 appMajor "Software Major Number";
+CM_ SG_ 256 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 256 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 256 bootMinor "Bootloader Minor Number";
+CM_ SG_ 256 bootMajor "Bootloader Major Number";
+CM_ SG_ 256 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 256 appMinor "Software Minor Number";
+CM_ SG_ 256 appMajor "Software Major Number";
+CM_ BO_ 76 "CPLD Version";
+CM_ BO_ 92 "32-bit CRC and Source Code Control Information (SVN revision)";
+CM_ BO_ 84 "32-bit CRC and Source Code Control Information (SVN revision)";
+CM_ BO_ 60 "Reset Processor";
+CM_ BO_ 56 "Reset Processor";
+CM_ BO_ 52 "Reset Processor";
+CM_ BO_ 54 "Reset Processor";
+CM_ BO_ 44 "Protocol Number and Compile Date";
+CM_ BO_ 36 "Protocol Number and Compile Date";
+CM_ BO_ 28 "CPU ID / Serial Number";
+CM_ BO_ 20 "CPU ID / Serial Number";
+CM_ BO_ 12 "Version and Build Flags";
+CM_ BO_ 8 "Version and Build Flags";
+CM_ BO_ 4 "Version and Build Flags";
+CM_ BO_ 6 "Version and Build Flags";
+CM_ BO_ 82 "32-bit CRC and Source Code Control Information (SVN revision)";
+CM_ BO_ 50 "Reset Processor";
+CM_ BO_ 34 "Protocol Number and Compile Date";
+CM_ BO_ 18 "CPU ID / Serial Number";
+CM_ BO_ 2 "Version and Build Flags";
+CM_ SG_ 240 Car_SubMinor_Version "Unsigned 8 bit Car SubMinor Version";
+CM_ SG_ 240 Car_Minor_Version "Unsigned 8 bit Car Minor Version";
+CM_ SG_ 240 Car_Major_Version "Unsigned 8 bit Car Major Version";
+CM_ SG_ 240 VBT_VIN2 "7 bytes of VIN VIN[10:16]";
+CM_ SG_ 240 VBT_VIN1 "7 bytes of VIN VIN[3:9]";
+CM_ SG_ 240 VMS_VMS_Broadcast_ "VMS_VMS_Broadcast multiplexor signal";
+CM_ SG_ 240 VBT_Timestamp "32-bit time in seconds since 00:00:00 January 1, 1970 UTC";
+CM_ SG_ 1626 aps12V "16-bit unsigned APS Voltage. Units 1 Volt";
+CM_ SG_ 1626 shiftStage "Shift Stage (0=Fwd Gear, 1=Rev Gear, 2=Neut, 3=Park, 4=Ramp Off, 5=Ramp On)";
+CM_ SG_ 1626 motorTorque "8-bit signed Motor Torque.  Units 100/128 %";
+CM_ SG_ 1626 motorRPM "16-bit signed Motor RPM. Units 15000/32768 RPM";
+CM_ SG_ 1626 requestTorque "8-bit unsigned Requested Torque.  Units 100/128 %";
+CM_ SG_ 1626 towMode "TRUE if DMC is in tow mode";
+CM_ SG_ 1626 waitForBrake "TRUE if DMC is waiting for brake pedal before selecting a gear again";
+CM_ SG_ 1626 unParkEffort "Park Effort (0=Soft, 1=Hard, 2=Harder, 3=Hardest)";
+CM_ SG_ 1626 parkRequest "Park Request  (0=Off, 1=park, 2=Unpark, 3=Unused)";
+CM_ SG_ 1646 poleCTemp "Phase C Pole Temperature units 125/256 degrees C";
+CM_ SG_ 1646 poleBTemp "Phase B Pole Temperature units 125/256 degrees C";
+CM_ SG_ 1646 poleATemp "Phase A Pole Temperature units 125/256 degrees C";
+CM_ SG_ 1820 diagParameter "Diagnostic Parameter - if Mode is active this becomes the controlling value
+Motor Fan:           Motor Fan PWM 0 - 0x7F
+Pole Fan:              Pole Fan PWM 0 - 0x7F
+Brake Light:         0 = Off, 1 = On";
+CM_ SG_ 1820 diagMode "Diagnostic Mode  0 = Deactivate, 1 = Activate ";
+CM_ SG_ 1820 diagCmd "Diagnostic Command - only one individual command may be sent at a time
+0x01 Motor Fan Command
+0x02 Pole Fan Command
+0x04  Brake Light Command
+0x08 Unused
+0x10 Unused
+0x20 Unused
+0x40 Unused
+0x80 Activate / Deactivate Diagnostic Mode";
+CM_ SG_ 1630 diagModeInhibited "Diagnostic Mode Inhibited";
+CM_ SG_ 1630 brakeLightModeInhibited "Brake Light Mode Inhibited";
+CM_ SG_ 1630 poleFanModeInhibited "Pole Fan Mode Inhibited";
+CM_ SG_ 1630 motorFanModeInhibited "Motor Fan Mode Inhibited";
+CM_ SG_ 1630 diagModeActive "Diagnostic Mode Active";
+CM_ SG_ 1630 brakeLightModeEnabled "Brake Light Mode Enabled";
+CM_ SG_ 1630 poleFanModeEnabled "Pole Fan Mode Enabled";
+CM_ SG_ 1630 motorFanModeEnabled "Motor Fan Mode Enabled";
+CM_ SG_ 1152 ambientTemp "8-bit unsigned PEM Ambient Temperature.  Units 200/256 degrees C with a -40 offset. Range is -40 to 160.";
+CM_ SG_ 1152 LCMCTemp "LCMC Temperature. Units 200/256 degrees C with a -40 offset. Range is -40 to 160.";
+CM_ SG_ 1152 motorFanPWM "Motor fan PWM.  Fraction of 127 (MSB unused for compatibility)";
+CM_ SG_ 1152 motorFanI "Motor fan current.  Units 0.048875855 A";
+CM_ SG_ 1152 motorFanV "Motor fan voltage.  Units (1024 * 248) / (4 * 5000) Volts";
+CM_ SG_ 1152 poleFanPWM "Pole fan PWM.  Fraction of 127 (MSB unused for compatibility)";
+CM_ SG_ 1152 poleFanI "Pole fan current.  Units 0.048875855 A";
+CM_ SG_ 1152 poleFanV "Pole fan voltage.  Units (1024 * 248) / (4 * 5000) Volts";
+CM_ SG_ 416 checksum "Message checksum";
+CM_ SG_ 416 counter "Counter (with overflow) for message";
+CM_ SG_ 416 diagMode "Actual Diagnostic Mode (1 = diagnostic mode)";
+CM_ SG_ 416 brakeLightSW "Brake Light Switch (0 = switch not pressed; 1 = switch pressed)";
+CM_ SG_ 416 brakeContLamp "Brake control warning lamp (0 = warning lamp off; 1 = warning lamp on)";
+CM_ SG_ 416 BLDLamp "Brake Lock Differential warning lamp (0 = warning lamp off; 1 = warning lamp on)";
+CM_ SG_ 416 warnLamp "ABS warning lamp (0 = warning lamp off; 1 = warning lamp on)";
+CM_ SG_ 416 activeEBD "Active Electronic Brakeforce Distribution (1 if there is an actual EBD)";
+CM_ SG_ 416 activeEDL "Active Electronic Differential Lock (1 if there is an actual Differential Lock)";
+CM_ SG_ 416 activeABS "Active ABS Braking (1 if there is an actual ABS braking)";
+CM_ SG_ 416 BLDSwitch "Brake Lock Differential Switch (0 = switch off, 1 = switch on)";
+CM_ SG_ 416 failureEntry "Failure Entry (1 if there is at least one failure entry)";
+CM_ SG_ 1776 alertIDFault "TRUE if alert ID is a fault";
+CM_ SG_ 1776 alertID "Alert ID";
+CM_ SG_ 1776 alertData "Alert Data";
+CM_ SG_ 1696 newTiresLearning "”New Tires” learning mode is active = 1";
+CM_ SG_ 1696 VBat "PEC measured battery voltage.  Units 500/65536 V";
+CM_ SG_ 1696 rotorTemp "Rotor temperature, Units 400/256";
+CM_ SG_ 1696 poleAccLimit "TRUE when pole accumulator limit is active";
+CM_ SG_ 1696 performanceReady "TRUE when all limits are off for performance run";
+CM_ SG_ 1696 ESSAccLimit "TRUE when ESS current accumulator limit is active";
+CM_ SG_ 1696 rotorAccLimit "TRUE when rotor accumulator limit is active";
+CM_ SG_ 1696 powerLimitLight "TRUE to light IP Power Limit indicator";
+CM_ SG_ 1696 immobilized "TRUE when immobilized";
+CM_ SG_ 1696 TCDisabledBySwitch "TRUE when TC is disabled via the TC button";
+CM_ SG_ 1696 pedalPos "Pedal position. Units 100/256 %";
+CM_ SG_ 1696 PECState "PEC State machine state";
+CM_ SG_ 1696 cruiseR "TRUE if cruise R button is active";
+CM_ SG_ 1696 cruiseI "TRUE if cruise I button is active";
+CM_ SG_ 1696 leverPos "Shift lever position";
+CM_ SG_ 1696 PECMode "PEC State machine mode";
+CM_ SG_ 1696 cruiseO "TRUE if cruise O button is active";
+CM_ SG_ 1696 shiftState "Shift State: 0=Invalid,1=P,2=R,3=N,4=D,(5,6,7)=not used";
+CM_ SG_ 1712 phaseCTemp "Phase C temperature Units are 125/256 degrees C";
+CM_ SG_ 1712 phaseBTemp "Phase B temperature Units are 125/256 degrees C";
+CM_ SG_ 1712 phaseATemp "Phase A temperature Units are 125/256 degrees C";
+CM_ SG_ 1712 motor2Temp "Motor temp sensor 2. Units are degrees C";
+CM_ SG_ 1712 motor1Temp "Motor temp sensor 1. Units are degrees C";
+CM_ SG_ 1712 motorTemp "Unsigned active motor temperature. Units are degrees C";
+CM_ SG_ 1712 motorCurrent "Unsigned measured rms phase current. Units 1000/65536 A";
+CM_ SG_ 1680 cruiseActive "TRUE when cruise control active";
+CM_ SG_ 1680 batteryCurrentLimitActive "BCL: Battery current limit active";
+CM_ SG_ 1680 motorControlLimitActive "MCL: Motor control limit active";
+CM_ SG_ 1680 VMS_limitActive "VL: VMS limit active";
+CM_ SG_ 1680 TC_limitActive "TCL: Traction control limit active";
+CM_ SG_ 1680 thermalLimitActive "TL: Thermal limit active ";
+CM_ SG_ 1680 speedLimitActive "SL: Speed limit active";
+CM_ SG_ 1680 highVoltageLimit "VLH: High Voltage limit active";
+CM_ SG_ 1680 lowVoltageLimit "VLL: Low Voltage limit active";
+CM_ SG_ 1680 transDiffLimitActive "TDL: Transmission Differential Limit active";
+CM_ SG_ 1680 TC_disabled "TRUE when traction control is disabled";
+CM_ SG_ 1680 keySwitchOn "Key switch: 1=On 0=Off";
+CM_ SG_ 1680 regenBrakeLight "TRUE when brake light is active due to regen";
+CM_ SG_ 1680 brakePedal "TRUE when brake pedal is active";
+CM_ SG_ 1680 F_R_torqueDir "F/R: Torque Direction: 1: Forward 0: Reverse";
+CM_ SG_ 1680 D_G_torqueDir "D/G: Torque Direction: 1: Driving 0: Generating";
+CM_ SG_ 1680 vehicleSpeed "Unsigned vehicle speed. Units 6553.6/65536 MPH";
+CM_ SG_ 1680 motorTorque "Unsigned motor torque. Units 400/65536 Nm";
+CM_ SG_ 1680 motorRPM "Signed motor tachometer speed. Units 15000/32768 RPM";
+CM_ SG_ 1664 chargeENUM "Charge ENUM 0- battery voltage mode 1- battery current mode 2- line current mode 3- trickle charge mode";
+CM_ SG_ 1664 lowMinBrick "1 = Low Min Brick during charge";
+CM_ SG_ 1664 logVmsChgStatus "1 = make a vms log entry for charge status";
+CM_ SG_ 1664 chargeEnd "Charge End ENUM 0- None 1- Charge Complete (Green) 2- VMS Stopped (Blue) 3- Charge Aborted (Red)";
+CM_ SG_ 1664 pilotValid "PI: Charge Pilot signal valid";
+CM_ SG_ 1664 IAvail "Unsigned available current on charge circuit. Units 1A";
+CM_ SG_ 1664 IRef "Signed reference charge current. Units 1A";
+CM_ SG_ 1664 VLine "Unsigned line voltage. Units 500/65536 V";
+CM_ SG_ 1664 ILine "Unsigned line current. Units 200/65536 A";
+BA_DEF_ SG_  "FieldType" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "FieldType" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "FieldType" SG_ 1696 PECState "DSM_State";
+BA_ "FieldType" SG_ 1696 PECMode "DSM_Mode";
+VAL_ 3221225472 pm_shiftState 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park (unused)" 0 "Invalid" ;
+VAL_ 118 setVarCmd 22 "open/short report interval" 21 "device state report interval" 20 "window event debounce limit" 19 "voltage report interval" 18 "hazard sw sample rate" 17 "click on pulses" 16 "click period" 15 "hi beam shed duration" 14 "lo beam shed duration" 13 "debounce limit" 12 "window event startup defeat" 11 "window event threshold" 10 "window autodown hold time" 9 "lock/unlock flash on time" 8 "lock/unlock flash off time" 7 "lamp out turn signal on time" 6 "lamp out turn signal off time" 5 "turn signal on duration" 4 "turn signal off duration" 3 "abs shed duration" 2 "illumination level" 1 "interior fade duration" 0 "debug mode" ;
+VAL_ 102 lockState 3 "Panic" 2 "Lock Failed" 1 "Unlocked" 0 "Locked" ;
+VAL_ 102 keyState 2 "On" 1 "Accessory" 0 "Off" ;
+VAL_ 1372 parkLock 6 "Unpark Stall" 5 "Unparked" 4 "Unparking" 3 "Park Stall" 2 "Parked" 1 "Parking" 0 "Off" ;
+VAL_ 944 status_STBY 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_ 944 status_12V_battery 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_ 944 status_SRS 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_ 944 status_12V 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_ 608 pm_shiftRequest 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park (unused)" 0 "Invalid" ;
+VAL_ 1794 LED_TC_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 LED_SP_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 LED_R_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 LED_P_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 LED_N_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 LED_D_Red 1 "Red" 0 "Green" ;
+VAL_ 1794 AllLedsOff 1 "All LEDs Off" 0 "All LEDs On" ;
+VAL_ 1584 driveConfig 3 "Unused" 2 "Unused" 1 "Sport" 0 "Base" ;
+VAL_ 1584 evseState 5 "Pilot Fault" 4 "Fault" 3 "Charging" 2 "Connected" 1 "Idle" 0 "Unknown" ;
+VAL_ 140 tcmType 2 "Xtrac" 1 "Magna" 0 "no TCM" ;
+VAL_ 140 driveMode 5 "Tow Mode" 4 "Performance" 3 "Max Range" 2 "Full" 1 "Storage" 0 "Standard" ;
+VAL_ 140 chargeEnd 3 "Charge Aborted" 2 "VMS Stopped" 1 "Charge Complete" 0 "None" ;
+VAL_ 140 chargeMode 1 "Charge" 0 "Drive" ;
+VAL_ 1626 unParkEffort 3 "hardest" 2 "harder" 1 "hard" 0 "soft" ;
+VAL_ 1626 parkRequest 2 "Unpark" 1 "Park" 0 "Off" ;
+VAL_ 1820 diagMode 1 "Activate" 0 "Deactivate" ;
+VAL_ 1820 diagCmd 128 "Activate/Deactivate Diag Mode" 4 "Brake Light Command" 2 "Pole Fan Command" 1 "Motor Fan Command" ;
+VAL_ 1696 PECState 4 "STATE_ENABLE" 3 "STATE_FAULT" 2 "STATE_CLEAR_FAULT" 1 "STATE_STANDBY" 0 "STATE_INVALID" ;
+VAL_ 1696 leverPos 4 "D" 3 "N" 2 "R" 1 "P" 0 "Invalid" ;
+VAL_ 1696 PECMode 4 "MODE_DYNO" 3 "MODE_HEATESS" 2 "MODE_CHARGE" 1 "MODE_DRIVE" 0 "MODE_UNDEF" ;
+VAL_ 1696 shiftState 4 "D" 3 "N" 2 "R" 1 "P" 0 "Invalid" ;
+VAL_ 1664 chargeENUM 3 "trickle charge" 2 "line current mode" 1 "battery current mode" 0 "battery voltage mode" ;
+VAL_ 1664 chargeEnd 3 "Charge Aborted" 2 "VMS Stopped" 1 "Charge Complete" 0 "None" ;
+SIG_GROUP_ 240 VMS_VMS_Broadcast 1 : Car_Major_Version Car_SubMinor_Version Car_Minor_Version VBT_VIN2 VBT_VIN1 VBT_Timestamp;
+

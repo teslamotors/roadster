@@ -1,0 +1,1447 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VMS BSM CSB BMB HVAC
+VAL_TABLE_ VMS_mode 2 "Drive" 1 "Charge" 0 "Idle" ;
+VAL_TABLE_ sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_TABLE_ BMB_mpexResp 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_TABLE_ VMS_BMB_mpexReq 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_TABLE_ CSB_mpex 11 "CSB Mean iBat Buffers" 10 "CSB History" 8 "CSB Fault" 31 "CSB Self Test" 21 "CSB ADC Chan 5-9" 20 "CSB ADC Chan 0-4" 7 "CSB Serial Number" 6 "CSB iBat" 5 "CSB Report Intervals" 4 "CSB Energy" 3 "CSB Clear Faults" 1 "CSB Reset" 0 "CSB Version" ;
+VAL_TABLE_ BSM_mpex 38 "Car version" 37 "VMS mode" 36 "BSM Open Contactor Cmd" 34 "BSM Query Precharge Data" 33 "BSM Set Odometer" 32 "BSM Get Odometer" 31 "BSM Self Test" 22 "BSM Disable Low V Checks" 21 "BSM Get ADC Chan 5-9" 20 "BSM Get ADC Chan 0-4" 19 "BSM Get Contactor Open Count" 18 "BSM En/Disable IsolationTest" 17 "BSM Report Intervals" 16 "BSM Do Isolation Test" 15 "BSM Get Isolation Resistance" 7 "BSM Clear All Faults" 6 "BSM Get Humidity and Temp" 5 "BSM Clear Non-perm Faults" 4 "BSM Get State" 3 "BSM Set State" 1 "BSM Reset" 0 "BSM Version" ;
+VAL_TABLE_ VMSIO_RKE_status 2 "RKE3 pressed" 1 "RKE2 pressed" 0 "RKE1 pressed" ;
+VAL_TABLE_ VMSIO_resetGPS 0 "Turn GPS off" ;
+VAL_TABLE_ VMSIO_openRequest 2 "Open passenger door" 1 "Open driver door" 0 "Open trunk" ;
+VAL_TABLE_ VMSIO_setStatePort 4 "Port E" 3 "Port D" 2 "Port C" 1 "Port B" 0 "Port A" ;
+VAL_TABLE_ VMSIO_homelinkData 2 "Button 3/C" 1 "Button 2/B" 0 "Button 1/A" ;
+VAL_TABLE_ VMSIO_homelinkCmd 5 "Enter default mode" 4 "Cancel current function" 3 "Query state" 2 "Start xmit button N" 1 "Program button N" 0 "Clear all buttons" ;
+VAL_TABLE_ VMSIO_mpex 9 "VMSIO RKE Status" 8 "VMSIO Reset GPS" 7 "VMSIO ioStateGetOutput" 6 "VMSIO openRequest" 5 "VMSIO ioStateGet" 4 "VMSIO ioSetState" 3 "VMSIO Homelink Cmd" 2 "VMSIO Get Status" 1 "VMSIO Reset" 0 "VMSIO Version" ;
+VAL_TABLE_ HVAC_loadShed 1 "Inactive" 0 "Active" ;
+VAL_TABLE_ HVAC_condFanStatus 2 "High" 1 "Low" 0 "Off" ;
+VAL_TABLE_ HVAC_cabinFanStatus 3 "High" 2 "Medium" 1 "Low" 0 "Off" ;
+VAL_TABLE_ HVAC_BLPutCmd 4 "Test checksum" 3 "Test checksum, set app flag" 2 "Init checksum and verify flag" 1 "Reset" 0 "NOP" ;
+VAL_TABLE_ HVAC_BL_putFlags4 1 "Erase, then write" 0 "Don't send ack frame" ;
+VAL_TABLE_ HVAC_BL_putFlags2 1 "Erase, then write" 0 "Don't erase before write" ;
+VAL_TABLE_ HVAC_BL_putFlags3 1 "Allow writes" 0 "Update pointer manually" ;
+VAL_TABLE_ HVAC_BL_putFlags1 1 "No write after erase" 0 "Allow write after erase" ;
+VAL_TABLE_ HVAC_BL_putFlags0 1 "Allow writes" 0 "Prevent writes" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ bsmBootP : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ spare5 : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ spare4 : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ spare3 : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ spare2 : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ spare1 : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1315 P_SensorBL_Updater: 8 Vector__XXX
+ SG_ P_sensor_BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1313 P_SensorBootP: 8 Vector__XXX
+ SG_ P_sensorBootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1115 BMB_BL_Uodater_Sheet_11: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1099 BMB_BL_Uodater_Sheet_09: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1091 BMB_BL_Uodater_Sheet_08: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1083 BMB_BL_Uodater_Sheet_07: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1075 BMB_BL_Uodater_Sheet_06: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1067 BMB_BL_Uodater_Sheet_05: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1059 BMB_BL_Uodater_Sheet_04: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1051 BMB_BL_Uodater_Sheet_03: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1043 BMB_BL_Uodater_Sheet_02: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1107 BMB_BL_Uodater_Sheet_10: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1035 BMB_BL_Uodater_Sheet_01: 8 BMB
+ SG_ BL_updater : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1113 BMB_BootP_Sheet_11: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1097 BMB_BootP_Sheet_09: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1089 BMB_BootP_Sheet_08: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1081 BMB_BootP_Sheet_07: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1073 BMB_BootP_Sheet_06: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1065 BMB_BootP_Sheet_05: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1057 BMB_BootP_Sheet_04: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1049 BMB_BootP_Sheet_03: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1041 BMB_BootP_Sheet_02: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1105 BMB_BootP_Sheet_10: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1033 BMB_BootP_Sheet_01: 8 BMB
+ SG_ BMB_bootP : 0|64@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 222 BMB_Status_Sheet_11: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 206 BMB_Status_Sheet_09: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 198 BMB_Status_Sheet_08: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 190 BMB_Status_Sheet_07: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 182 BMB_Status_Sheet_06: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 174 BMB_Status_Sheet_05: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 166 BMB_Status_Sheet_04: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 158 BMB_Status_Sheet_03: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 150 BMB_Status_Sheet_02: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 214 BMB_Status_Sheet_10: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 142 BMB_Status_Sheet_01: 5 BMB
+ SG_ sheetBrickAlarmID : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sheetAlarmReason : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ picPGD : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGC : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ picPGM : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sheetAlarm : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN_powerOK : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cellReversal : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ overVoltage : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daisyRecieve : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ bleedResistors : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 156 BMB_MinMaxAvgT_Sheet_03: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 220 BMB_MinMaxAvgT_Sheet_11: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 212 BMB_MinMaxAvgT_Sheet_10: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 204 BMB_MinMaxAvgT_Sheet_09: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 196 BMB_MinMaxAvgT_Sheet_08: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 188 BMB_MinMaxAvgT_Sheet_07: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 180 BMB_MinMaxAvgT_Sheet_06: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 172 BMB_MinMaxAvgT_Sheet_05: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 164 BMB_MinMaxAvgT_Sheet_04: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 148 BMB_MinMaxAvgT_Sheet_02: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 140 BMB_MinMaxAvgT_Sheet_01: 8 BMB
+ SG_ minThermID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxThermID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ avgTemp : 32|24@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ maxTemp : 16|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+ SG_ minTemp : 0|16@1- (0.00390625,0) [0|0] "Deg C" Vector__XXX
+
+BO_ 154 BMB_MinMaxAvgV_Sheet_03: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 218 BMB_MinMaxAvgV_Sheet_11: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 210 BMB_MinMaxAvgV_Sheet_10: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 202 BMB_MinMaxAvgV_Sheet_09: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 194 BMB_MinMaxAvgV_Sheet_08: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 186 BMB_MinMaxAvgV_Sheet_07: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 178 BMB_MinMaxAvgV_Sheet_06: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 170 BMB_MinMaxAvgV_Sheet_05: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 162 BMB_MinMaxAvgV_Sheet_04: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 146 BMB_MinMaxAvgV_Sheet_02: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 138 BMB_MinMaxAvgV_Sheet_01: 8 BMB
+ SG_ maxBrickID : 60|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minBrickID : 56|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ sumAvg : 32|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 16|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 152 BMB_Balance_Sheet_03: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 216 BMB_Balance_Sheet_11: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 208 BMB_Balance_Sheet_10: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 200 BMB_Balance_Sheet_09: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 192 BMB_Balance_Sheet_08: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 184 BMB_Balance_Sheet_07: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 176 BMB_Balance_Sheet_06: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 168 BMB_Balance_Sheet_05: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 160 BMB_Balance_Sheet_04: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 144 BMB_Balance_Sheet_02: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 136 BMB_Balance_Sheet_01: 6 BMB
+ SG_ maxBrickID : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ maxVoltage : 24|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+ SG_ minBrickID : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minVoltage : 0|16@1+ (0.0001220703125,0) [0|0] "V" Vector__XXX
+
+BO_ 802 VMS_BMB_Response_Sheet_04: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 794 VMS_BMB_Response_Sheet_03: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 858 VMS_BMB_Response_Sheet_11: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 850 VMS_BMB_Response_Sheet_10: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 842 VMS_BMB_Response_Sheet_09: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 834 VMS_BMB_Response_Sheet_08: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 826 VMS_BMB_Response_Sheet_07: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 818 VMS_BMB_Response_Sheet_06: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 810 VMS_BMB_Response_Sheet_05: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 786 VMS_BMB_Response_Sheet_02: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 778 VMS_BMB_Response_Sheet_01: 8 VMS
+ SG_ BMB_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 10 VMS_BMB_Request_Sheet_01: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 26 VMS_BMB_Request_Sheet_03: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 90 VMS_BMB_Request_Sheet_11: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 82 VMS_BMB_Request_Sheet_10: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 74 VMS_BMB_Request_Sheet_09: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 66 VMS_BMB_Request_Sheet_08: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 58 VMS_BMB_Request_Sheet_07: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 50 VMS_BMB_Request_Sheet_06: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 42 VMS_BMB_Request_Sheet_05: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 34 VMS_BMB_Request_Sheet_04: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 18 VMS_BMB_Request_Sheet_02: 8 VMS
+ SG_ VMS_BMB_reqMpex0 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 6 VMS_BMB_Request_Broadcast: 8 VMS
+ SG_ subminor m38 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minor m38 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ major m38 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ contactorsClosed m37 : 24|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ VMS_mode m37 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VMS_BMB_reqMpex0 M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ time m0 : 16|32@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1547 CSB_BL_updater: 8 CSB
+ SG_ CSB_BL_updater : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ vmsioBL_updater : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1545 CSB_BootP: 8 CSB
+ SG_ CSB_BootP : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ vmsioBootP : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 648 CSB_Response: 8 CSB
+ SG_ CSB_reqMpex : 0|8@1- (1,0) [0|0] "" Vector__XXX
+
+BO_ 520 CSB_Request: 8 CSB
+ SG_ CSB_reqMpex : 0|8@1- (1,0) [0|0] "" Vector__XXX
+
+BO_ 1537 BSM_BootP: 8 BSM
+
+BO_ 640 BSM_Response: 8 BSM
+ SG_ BSM_reqMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 512 BSM_Request: 8 BSM
+ SG_ BSM_reqMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1666 VMSIO_testFirmwareMsgs: 8 VMS
+
+BO_ 1538 VMSIO_TesterMsgs: 8 VMS
+
+BO_ 1795 VMSIO_BL_updater: 8 VMS
+ SG_ vmsioBL_updater : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1793 VMSIO_BootP: 8 VMS
+ SG_ vmsioBootP : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 896 VMSIO_Response: 8 VMS
+ SG_ trunkOpen m2 : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ RKE3_pressed m9 : 42|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ RKE2_pressed m9 : 41|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ RKE1_pressed m9 : 40|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ portC_input m5 : 24|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ RKE3_PW m9 : 32|8@1+ (10,0) [0|0] "ms" Vector__XXX
+ SG_ RKE2_PW m9 : 24|8@1+ (10,0) [0|0] "ms" Vector__XXX
+ SG_ RKE1_PW m9 : 16|8@1+ (10,0) [0|0] "ms" Vector__XXX
+ SG_ RKE_seqId m9 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ portE_output m7 : 40|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portD_output m7 : 32|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portC_output m7 : 24|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portB_output m7 : 16|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portA_output m7 : 8|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portE_input m5 : 40|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portD_input m5 : 32|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portB_input m5 : 16|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ portA_input m5 : 8|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ homelinkStatus_ m3 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ LIN_RX_count m2 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ CDL_req m2 : 25|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ APS_onReq m2 : 24|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ SRS_deployed m2 : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ SRS_happy m2 : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ passengerClosed m2 : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ driverClosed m2 : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ hoodOpen m2 : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ homelinkStatus m2 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ subminor m0 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minor m0 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ major m0 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BL_subminor m0 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BL_minor m0 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BL_major m0 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VMSIO_respMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 768 VMSIO_Request: 8 VMS
+ SG_ resetGPS m8 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ openRequest m6 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ioStateSetByte m4 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ioStateSetPort m4 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ homelinkData m3 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ homelinkCmd m3 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VMSIO_reqMpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 2015 HVAC_Comp_ACCM_DiagReq: 8 HVAC
+
+BO_ 1999 HVAC_ACCM_Response: 8 HVAC
+
+BO_ 1991 HVAC_Comp_ACCM_Diag: 8 HVAC
+
+BO_ 1283 HVAC_BL_Updater: 8 HVAC
+
+BO_ 1281 HVAC_BootP: 8 HVAC
+
+BO_ 508 HVAC_DebugMsg5: 8 HVAC
+
+BO_ 506 HVAC_DebugMsg4: 8 HVAC
+
+BO_ 504 HVAC_DebugMsg3: 8 HVAC
+
+BO_ 502 HVAC_DebugMsg2: 8 HVAC
+
+BO_ 500 HVAC_DebugMsg1: 8 HVAC
+
+BO_ 498 HVAC_DebugMsg0: 8 HVAC
+
+BO_ 496 HVAC_DebugTimer: 8 HVAC
+ SG_ bitsPerByte_msg11E : 48|8@1- (1,0) [0|0] "" Vector__XXX
+ SG_ debugExpTime : 24|24@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ uptime : 0|24@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 286 HVAC_DebugControl: 1 HVAC
+ SG_ ESS_AC_PI_msg : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cabinAC_PI_msg : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ aux2MsgEnable : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ aux1MsgEnable : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ auxMsgEnable : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ T_P_msg_enable : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ heaterPID_Enable : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ serialLineOutputEnable : 0|1@1- (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 284 HVAC_DiagControl: 2 HVAC
+ SG_ CAN1_to_CAN0 : 8|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ diagMode : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ safetyOn : 6|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ frostTemp : 5|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ recircFlap : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ heaterFlap : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ recircLED : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ heatLED : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ AC_LED : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 282 HVAC_DiagTimer: 3 HVAC
+ SG_ frostIndEnabled : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ diagEnabled : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ CAN1_to_CAN0 : 16|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ remainingFrostIndTime : 8|8@1+ (1,0) [0|0] "s" Vector__XXX
+ SG_ remainingTestTime : 0|8@1+ (1,0) [0|0] "s" Vector__XXX
+
+BO_ 270 HVAC_Faults: 8 HVAC
+ SG_ frostIndEnabled : 63|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorDTC_commsTimeout : 63|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_tempSensorFailed : 62|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorCommsTimeout : 61|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressor_RX_CAN_7D_invalid : 60|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressor_RX_CAN410_invalid : 59|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_pumpFailedHighCurrent : 58|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_pumpFailedLowCurrent : 57|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorControllerElecFail : 56|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorOvertemp : 55|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorControllerOverVolt : 54|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorControllerUnderV : 53|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorOverCurrent : 52|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorElectricFailed : 51|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorRX_CAN_7D_timeout : 50|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_compressorRX_CAN_410_timeout : 49|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_loadShedTimeout : 48|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_refrigerantPressureHigh : 45|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_refrigerantPressureLow : 44|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_blowerOverCurrent : 43|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_blowerUnderCurrent : 42|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_evapOutletUndertemp : 40|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_outletOvertemp : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_ambientTempSensorFault : 36|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_coolantUndertemp : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_coolantOvertemp : 34|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_waterPumpOverCurrent : 33|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ FLT_waterPumpUnderCurrent : 32|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorDTC_commsTimeout : 31|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_tempSensorFailed : 30|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorCommsTimeout : 29|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressor_RX_CAN_7D_invalid : 28|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressor_RX_CAN_410_invalid : 27|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_pumpFailedHighCurrent : 26|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_pumpFailedLowCurrent : 25|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorControllerElecFail : 24|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorOvertemp : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorControllerOverVolt : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorControllerUnderVolt : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorOverCurrent : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorElectricFailed : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorRX_CAN_7D_timeout : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_compressorRX_CAN_410_timeout : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_loadShedTimeout : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_refrigerantPressureHigh : 13|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_refrigerantPressureLow : 12|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_blowerOverCurrent : 11|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_blowerUnderCurrent : 10|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_evapOutletUndertemp : 8|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_outletOvertemp : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_ambientTempSensorFault : 4|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_coolantUndertemp : 3|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_coolantOvertemp : 2|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_waterPumpOverCurrent : 1|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ST_waterPumpUnderCurrent : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 268 HVAC_VehicleSpeed: 3 HVAC
+ SG_ charging : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ vehicleSpeedHVAC : 0|16@1+ (0.1,0) [0|0] "MPH" Vector__XXX
+
+BO_ 266 HVAC_RemoteControlRequest: 5 HVAC
+ SG_ testSol1 : 28|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ condenserFanTest : 38|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cabinFanTest : 36|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ diagMode : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ ESS_coolingPriority : 32|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ enableCabinControls : 31|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ enableHV : 30|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ testSol2 : 29|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ testSpareOutput1 : 27|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ testSpareOutput2 : 26|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ activateTests : 25|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ clearFaults : 24|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ reqCoolantPumpPerc : 16|8@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ reqCabinHeatPerc : 8|8@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ reqCoolingPerc : 0|8@1+ (1,0) [0|0] "%" Vector__XXX
+
+BO_ 263 HAVC_BL_DataGet: 0 HVAC
+
+BO_ 262 HVAC_Version: 6 HVAC
+ SG_ BL_subminor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BL_minor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ BL_major : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ subminor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ minor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ major : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 261 HVAC_BL_DataPut: 8 HVAC
+ SG_ data7 : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data6 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data5 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data4 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data3 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data2 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data1 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ data0 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 260 HVAC_Status2: 8 HVAC
+ SG_ cabinFanCurrent : 56|6@1+ (0.5,0) [0|0] "A" Vector__XXX
+ SG_ coolantPumpCurrent : 48|6@1+ (0.125,0) [0|0] "A" Vector__XXX
+ SG_ diagEnabled : 47|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ loadShedHVAC : 45|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ thermostatClosed : 44|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ frameCounter : 40|4@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ condenserFanPerc : 32|8@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ cabinSolenoid : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ ESS_solenoid : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ refrigerantPressure : 24|7@1+ (0.25,0) [0|0] "bar" Vector__XXX
+ SG_ compressorSpeed : 16|8@1+ (64,0) [0|0] "RPM" Vector__XXX
+ SG_ dirFlapPosPerc : 8|7@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ tempKnobPerc : 0|7@1+ (1,0) [0|0] "%" Vector__XXX
+
+BO_ 259 HVAC_BL_ControlGet: 0 HVAC
+
+BO_ 258 HVAC_Status: 8 HVAC
+ SG_ condenserFanStatus : 62|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cabinFanStatus : 60|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ compressorOn : 59|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ heaterOn : 58|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ HV_enabled : 57|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ cabinEnabled : 56|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ glycolT : 48|8@1+ (0.5,-30) [0|0] "Deg C" Vector__XXX
+ SG_ cabinOutletT : 40|8@1+ (0.5,-30) [0|0] "Deg C" Vector__XXX
+ SG_ HVAC_AmbientT : 32|8@1+ (0.5,-30) [0|0] "Deg C" Vector__XXX
+ SG_ evapOutletT : 24|8@1+ (0.5,-30) [0|0] "Deg C" Vector__XXX
+ SG_ recircSwState : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ pumpPerc : 16|7@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ heatingSwState : 15|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ heatingPerc : 8|7@1+ (1,0) [0|0] "%" Vector__XXX
+ SG_ coolingSwState : 7|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ coolingPerc : 0|7@1+ (1,0) [0|0] "%" Vector__XXX
+
+BO_ 257 HVAC_BL_ControlPut: 8 HVAC
+ SG_ cmdDataHigh : 56|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ cmdDataLow : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ command : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ flags4 : 36|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ flags3 : 35|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ flags2 : 34|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ flags1 : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ flags0 : 32|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ addressHigh : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ addressMiddle : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ addressLow : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 256 HVAC_RemoteReset: 0 HVAC
+ SG_ testSol1 : 0|1@1+ (1,0) [0|0] "" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 bsmBootP "8 bytes of VMSIO device specific data";
+CM_ SG_ 222 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 222 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 222 picPGD "pic PGD (icsp header)";
+CM_ SG_ 222 picPGC "pic PGC (icsp header)";
+CM_ SG_ 222 picPGM "pic PGM (icsp header)";
+CM_ SG_ 222 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 222 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 222 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 222 overVoltage "Over voltage (active low)";
+CM_ SG_ 222 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 222 bleedResistors "Bleed resistors";
+CM_ SG_ 206 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 206 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 206 picPGD "pic PGD (icsp header)";
+CM_ SG_ 206 picPGC "pic PGC (icsp header)";
+CM_ SG_ 206 picPGM "pic PGM (icsp header)";
+CM_ SG_ 206 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 206 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 206 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 206 overVoltage "Over voltage (active low)";
+CM_ SG_ 206 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 206 bleedResistors "Bleed resistors";
+CM_ SG_ 198 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 198 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 198 picPGD "pic PGD (icsp header)";
+CM_ SG_ 198 picPGC "pic PGC (icsp header)";
+CM_ SG_ 198 picPGM "pic PGM (icsp header)";
+CM_ SG_ 198 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 198 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 198 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 198 overVoltage "Over voltage (active low)";
+CM_ SG_ 198 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 198 bleedResistors "Bleed resistors";
+CM_ SG_ 190 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 190 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 190 picPGD "pic PGD (icsp header)";
+CM_ SG_ 190 picPGC "pic PGC (icsp header)";
+CM_ SG_ 190 picPGM "pic PGM (icsp header)";
+CM_ SG_ 190 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 190 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 190 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 190 overVoltage "Over voltage (active low)";
+CM_ SG_ 190 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 190 bleedResistors "Bleed resistors";
+CM_ SG_ 182 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 182 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 182 picPGD "pic PGD (icsp header)";
+CM_ SG_ 182 picPGC "pic PGC (icsp header)";
+CM_ SG_ 182 picPGM "pic PGM (icsp header)";
+CM_ SG_ 182 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 182 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 182 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 182 overVoltage "Over voltage (active low)";
+CM_ SG_ 182 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 182 bleedResistors "Bleed resistors";
+CM_ SG_ 174 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 174 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 174 picPGD "pic PGD (icsp header)";
+CM_ SG_ 174 picPGC "pic PGC (icsp header)";
+CM_ SG_ 174 picPGM "pic PGM (icsp header)";
+CM_ SG_ 174 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 174 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 174 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 174 overVoltage "Over voltage (active low)";
+CM_ SG_ 174 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 174 bleedResistors "Bleed resistors";
+CM_ SG_ 166 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 166 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 166 picPGD "pic PGD (icsp header)";
+CM_ SG_ 166 picPGC "pic PGC (icsp header)";
+CM_ SG_ 166 picPGM "pic PGM (icsp header)";
+CM_ SG_ 166 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 166 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 166 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 166 overVoltage "Over voltage (active low)";
+CM_ SG_ 166 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 166 bleedResistors "Bleed resistors";
+CM_ SG_ 158 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 158 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 158 picPGD "pic PGD (icsp header)";
+CM_ SG_ 158 picPGC "pic PGC (icsp header)";
+CM_ SG_ 158 picPGM "pic PGM (icsp header)";
+CM_ SG_ 158 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 158 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 158 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 158 overVoltage "Over voltage (active low)";
+CM_ SG_ 158 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 158 bleedResistors "Bleed resistors";
+CM_ SG_ 150 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 150 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 150 picPGD "pic PGD (icsp header)";
+CM_ SG_ 150 picPGC "pic PGC (icsp header)";
+CM_ SG_ 150 picPGM "pic PGM (icsp header)";
+CM_ SG_ 150 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 150 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 150 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 150 overVoltage "Over voltage (active low)";
+CM_ SG_ 150 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 150 bleedResistors "Bleed resistors";
+CM_ SG_ 214 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 214 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 214 picPGD "pic PGD (icsp header)";
+CM_ SG_ 214 picPGC "pic PGC (icsp header)";
+CM_ SG_ 214 picPGM "pic PGM (icsp header)";
+CM_ SG_ 214 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 214 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 214 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 214 overVoltage "Over voltage (active low)";
+CM_ SG_ 214 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 214 bleedResistors "Bleed resistors";
+CM_ SG_ 142 sheetBrickAlarmID "Sheet brick alarm ID";
+CM_ SG_ 142 sheetAlarmReason "Sheet alarm reason:
+•	3 – high temperature
+•	4 – low voltage
+•	5 – high voltage
+";
+CM_ SG_ 142 picPGD "pic PGD (icsp header)";
+CM_ SG_ 142 picPGC "pic PGC (icsp header)";
+CM_ SG_ 142 picPGM "pic PGM (icsp header)";
+CM_ SG_ 142 sheetAlarm "Sheet alarm (active low)";
+CM_ SG_ 142 CAN_powerOK "CAN Power OK (active low)";
+CM_ SG_ 142 cellReversal "Cell Reversal (active low)";
+CM_ SG_ 142 overVoltage "Over voltage (active low)";
+CM_ SG_ 142 daisyRecieve "Bit 0 – Daisy Receive";
+CM_ SG_ 142 bleedResistors "Bleed resistors";
+CM_ SG_ 156 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 156 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 156 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 156 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 156 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 220 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 220 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 220 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 220 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 220 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 212 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 212 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 212 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 212 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 212 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 204 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 204 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 204 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 204 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 204 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 196 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 196 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 196 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 196 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 196 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 188 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 188 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 188 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 188 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 188 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 180 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 180 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 180 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 180 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 180 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 172 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 172 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 172 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 172 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 172 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 164 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 164 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 164 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 164 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 164 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 148 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 148 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 148 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 148 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 148 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 140 minThermID "Min thermistor ID (0 based)";
+CM_ SG_ 140 maxThermID "Max thermistor ID (0 based)";
+CM_ SG_ 140 avgTemp "Sum of average temperatures. To get average divide by 6 and XOR with 0x8000";
+CM_ SG_ 140 maxTemp "Maximum signed temperature * 256";
+CM_ SG_ 140 minTemp "Minimum signed temperature * 256";
+CM_ SG_ 154 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 154 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 154 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 154 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 154 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 218 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 218 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 218 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 218 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 218 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 210 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 210 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 210 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 210 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 210 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 202 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 202 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 202 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 202 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 202 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 194 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 194 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 194 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 194 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 194 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 186 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 186 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 186 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 186 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 186 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 178 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 178 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 178 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 178 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 178 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 170 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 170 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 170 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 170 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 170 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 162 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 162 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 162 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 162 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 162 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 146 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 146 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 146 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 146 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 146 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 138 maxBrickID "Max brick ID (0 based)";
+CM_ SG_ 138 minBrickID "Min brick ID (0 based)";
+CM_ SG_ 138 sumAvg "Sum of average voltages. To get average divide by 9.";
+CM_ SG_ 138 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 138 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 152 maxBrickID "Maximum brick ID";
+CM_ SG_ 152 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 152 minBrickID "Minimum brick ID";
+CM_ SG_ 152 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 216 maxBrickID "Maximum brick ID";
+CM_ SG_ 216 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 216 minBrickID "Minimum brick ID";
+CM_ SG_ 216 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 208 maxBrickID "Maximum brick ID";
+CM_ SG_ 208 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 208 minBrickID "Minimum brick ID";
+CM_ SG_ 208 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 200 maxBrickID "Maximum brick ID";
+CM_ SG_ 200 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 200 minBrickID "Minimum brick ID";
+CM_ SG_ 200 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 192 maxBrickID "Maximum brick ID";
+CM_ SG_ 192 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 192 minBrickID "Minimum brick ID";
+CM_ SG_ 192 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 184 maxBrickID "Maximum brick ID";
+CM_ SG_ 184 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 184 minBrickID "Minimum brick ID";
+CM_ SG_ 184 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 176 maxBrickID "Maximum brick ID";
+CM_ SG_ 176 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 176 minBrickID "Minimum brick ID";
+CM_ SG_ 176 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 168 maxBrickID "Maximum brick ID";
+CM_ SG_ 168 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 168 minBrickID "Minimum brick ID";
+CM_ SG_ 168 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 160 maxBrickID "Maximum brick ID";
+CM_ SG_ 160 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 160 minBrickID "Minimum brick ID";
+CM_ SG_ 160 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 144 maxBrickID "Maximum brick ID";
+CM_ SG_ 144 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 144 minBrickID "Minimum brick ID";
+CM_ SG_ 144 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 136 maxBrickID "Maximum brick ID";
+CM_ SG_ 136 maxVoltage "Maximum unsigned voltage * 8192";
+CM_ SG_ 136 minBrickID "Minimum brick ID";
+CM_ SG_ 136 minVoltage "Minimum unsigned voltage * 8192";
+CM_ SG_ 6 subminor "Subminor Version";
+CM_ SG_ 6 minor "Minor Version";
+CM_ SG_ 6 major "Major Version";
+CM_ SG_ 6 VMS_mode "Mode
+0 = Idle
+1 = Charge
+2 = Drive
+";
+CM_ SG_ 6 time "32-bit time in seconds since 00:00:00 January 1, 1970 UTC";
+CM_ SG_ 1547 CSB_BL_updater "8 bytes of VMSIO device specific data";
+CM_ SG_ 1547 vmsioBL_updater "8 bytes of VMSIO device specific data";
+CM_ SG_ 1545 CSB_BootP "8 bytes of VMSIO device specific data";
+CM_ SG_ 1545 vmsioBootP "8 bytes of VMSIO device specific data";
+CM_ SG_ 1795 vmsioBL_updater "8 bytes of VMSIO device specific data";
+CM_ SG_ 1793 vmsioBootP "8 bytes of VMSIO device specific data";
+CM_ SG_ 896 trunkOpen "0 = Trunk closed, 1 = Trunk open";
+CM_ SG_ 896 RKE3_pressed "RKE3 pressed";
+CM_ SG_ 896 RKE2_pressed "RKE2 pressed";
+CM_ SG_ 896 RKE1_pressed "RKE1 pressed";
+CM_ SG_ 896 RKE3_PW "Unsigned 8 bit RKE3 pulse width. 10ms per bit";
+CM_ SG_ 896 RKE2_PW "Unsigned 8 bit RKE2 pulse width. 10ms per bit";
+CM_ SG_ 896 RKE1_PW "Unsigned 8 bit RKE1 pulse width. 10ms per bit";
+CM_ SG_ 896 RKE_seqId "Unsigned 8 bit RKE Sequence ID";
+CM_ SG_ 896 passengerClosed "0 = Passenger open, 1 = Passenger closed";
+CM_ SG_ 896 driverClosed "0 = Driver open, 1 = Driver closed";
+CM_ SG_ 896 hoodOpen "0 = Hood closed, 1 = Hood open";
+CM_ SG_ 896 subminor "Subminor Version";
+CM_ SG_ 896 minor "Minor Version";
+CM_ SG_ 896 major "Major Version";
+CM_ SG_ 896 BL_subminor "Bootloader Subminor Version";
+CM_ SG_ 896 BL_minor "Bootloader Minor Version";
+CM_ SG_ 896 BL_major "Bootloader Major Version";
+CM_ SG_ 768 resetGPS "0 = Turn GPS off, nonzero = turn GPS on";
+CM_ SG_ 768 openRequest "Open Request:
+•	0 = Open trunk
+•	1 = Open driver door
+•	2 = Open passenger door
+";
+CM_ SG_ 768 ioStateSetPort "Port:
+•	0 = Port A
+•	1 = Port B
+•	2 = Port C
+•	3 = Port D
+•	4 = Port E
+";
+CM_ SG_ 768 homelinkData "Data:
+•	0 – Button 1/A
+•	1 – Button 2/B
+•	2 – Button 3/C
+";
+CM_ SG_ 768 homelinkCmd "Command:
+•	0 – Clear All Buttons
+•	1 – Program button N
+•	2 – Start transmit button N
+•	3 – Query State
+•	4 – Cancel current function
+•	5 – Enter default mode
+";
+CM_ BO_ 2015 "8 byte message with opaque data specific to ACCM.  Used to download firmware to compressor.  This message is bridged by HVAC to the ACCM on the HVAC CAN1 bus";
+CM_ BO_ 1999 "8 byte message with opaque data specific to ACCM.  Used to download firmware to compressor.  This message is bridged by HVAC from the ACCM on the HVAC CAN1 bus to the ESS bus";
+CM_ BO_ 1991 "8 byte message with opaque data specific to ACCM.  Used to download firmware to compressor.  This message is bridged by HVAC to the ACCM on the HVAC CAN1 bus";
+CM_ BO_ 1283 "8 byte message with opaque data specific to this HVAC unit";
+CM_ BO_ 1281 "8 byte message with opaque data specific to this HVAC unit";
+CM_ BO_ 508 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ BO_ 506 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ BO_ 504 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ BO_ 502 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ BO_ 500 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ BO_ 498 "8 byte message used for HVAC debug. Contents change as needed";
+CM_ SG_ 496 bitsPerByte_msg11E "Bits per byte 0 of message 0x11e (HVAC Debug Control)";
+CM_ SG_ 496 debugExpTime "Debug expiration time";
+CM_ SG_ 286 ESS_AC_PI_msg "ESS Chiller PI CAN message enable";
+CM_ SG_ 286 cabinAC_PI_msg "Cabin AC PI CAN message enable";
+CM_ SG_ 286 aux2MsgEnable "Aux 2 message enable";
+CM_ SG_ 286 aux1MsgEnable "Aux1 message enable";
+CM_ SG_ 286 auxMsgEnable "Aux message enable";
+CM_ SG_ 286 T_P_msg_enable "Temperature & Pressure message enable";
+CM_ SG_ 286 heaterPID_Enable "Heater PID CAN message enable";
+CM_ SG_ 284 CAN1_to_CAN0 "CAN1 messages relayed to/from CAN0";
+CM_ SG_ 282 frostIndEnabled "Frost Indication Enabled";
+CM_ SG_ 282 diagEnabled "Diagnostics Enabled";
+CM_ SG_ 282 CAN1_to_CAN0 "CAN1 messages relayed to/from CAN0";
+CM_ SG_ 282 remainingFrostIndTime "Remaining Frost Indication Duration";
+CM_ SG_ 282 remainingTestTime "Remaining Test Duration";
+CM_ SG_ 270 frostIndEnabled "Frost Indication Enabled";
+CM_ SG_ 266 testSol1 "Test sol1 (ESS sol)";
+CM_ SG_ 266 condenserFanTest "Condenser Fan Test";
+CM_ SG_ 266 cabinFanTest "Cabin Fan Test";
+CM_ SG_ 266 diagMode "Diagnostic Mode";
+CM_ SG_ 266 ESS_coolingPriority "ESS cooling priority";
+CM_ SG_ 266 enableCabinControls "Enable cabin controls";
+CM_ SG_ 266 enableHV "Enable High Voltage";
+CM_ SG_ 266 testSol2 "Test sol2 (Cabin sol)";
+CM_ SG_ 266 testSpareOutput1 "Test spare output1 (compressor)";
+CM_ SG_ 266 testSpareOutput2 "Test spare output2 (heater)";
+CM_ SG_ 266 activateTests "Activate Tests";
+CM_ SG_ 266 clearFaults "Clear Faults";
+CM_ SG_ 266 reqCoolantPumpPerc "Request coolant pump %";
+CM_ SG_ 266 reqCabinHeatPerc "Request cabin heating %";
+CM_ SG_ 266 reqCoolingPerc "Request cooling %";
+CM_ BO_ 263 "Zero length message to the HVAC requesting data";
+CM_ BO_ 262 "The requester transmits a zero length RTR message with CAN ID 0x106. The HVAC responds with the following:";
+CM_ SG_ 262 BL_subminor "Bootloader Subminor Version";
+CM_ SG_ 262 BL_minor "Bootloader Minor Version";
+CM_ SG_ 262 BL_major "Bootloader Major Version";
+CM_ SG_ 262 subminor "Subminor Version";
+CM_ SG_ 262 minor "Minor Version";
+CM_ SG_ 262 major "Major Version";
+CM_ SG_ 261 data7 "HVAC Bootloader Data Put 7";
+CM_ SG_ 261 data6 "HVAC Bootloader Data Put 6";
+CM_ SG_ 261 data5 "HVAC Bootloader Data Put 5";
+CM_ SG_ 261 data4 "HVAC Bootloader Data Put 4";
+CM_ SG_ 261 data3 "HVAC Bootloader Data Put 3";
+CM_ SG_ 261 data2 "HVAC Bootloader Data Put 2";
+CM_ SG_ 261 data1 "HVAC Bootloader Data Put 1";
+CM_ SG_ 261 data0 "HVAC Bootloader Data Put 0";
+CM_ SG_ 260 cabinFanCurrent "Cabin fan current, .5 A/bit";
+CM_ SG_ 260 coolantPumpCurrent "Coolant pump current, .125 A/bit";
+CM_ SG_ 260 diagEnabled "Diagnostics Enabled, 1 = diagnostics enabled";
+CM_ SG_ 260 loadShedHVAC "Load Shed, 0 = active";
+CM_ SG_ 260 thermostatClosed "Thermostat switch, 0 = thermostat open";
+CM_ SG_ 260 frameCounter "Frame counter";
+CM_ SG_ 260 condenserFanPerc "Condenser Fan percent";
+CM_ SG_ 260 cabinSolenoid "Cabin Solenoid, 1 = solenoid open";
+CM_ SG_ 260 ESS_solenoid "ESS Solenoid, 1 = solenoid open";
+CM_ SG_ 260 refrigerantPressure "Refrigerant pressure, .25 bar/bit";
+CM_ SG_ 260 compressorSpeed "Compressor Speed RPM, 64 rpm/bit";
+CM_ SG_ 260 dirFlapPosPerc "Direction flap position percent";
+CM_ SG_ 260 tempKnobPerc "Temperature knob position percent";
+CM_ BO_ 259 "Zero length message to the HVAC requesting control registers.";
+CM_ SG_ 258 condenserFanStatus "Condenser Fan Status, 0 = off, 1 = low, 2 = high";
+CM_ SG_ 258 cabinFanStatus "Cabin Fan Status, 0 = off, 1 = low, 2 = medium, 3 = high";
+CM_ SG_ 258 compressorOn "Compressor On, 1 = compressor is commanded on";
+CM_ SG_ 258 heaterOn "Heater On, 1 = heater is being commanded on";
+CM_ SG_ 258 HV_enabled "High Voltage enabled, 1 = High Voltage enabled";
+CM_ SG_ 258 cabinEnabled "Cabin enabled, 1 = cabin enabled";
+CM_ SG_ 258 glycolT "Glycol temperature, 0=-30 °C, 0xfe = 97 °C, .5°C per bit, -30 °C offset";
+CM_ SG_ 258 cabinOutletT "Cabin Outlet temperature, 0=-30 °C, 0xfe = 97 °C, .5°C per bit, -30 °C offset";
+CM_ SG_ 258 HVAC_AmbientT "Outside ambient temperature, 0=-30 °C, 0xfe = 97 °C, .5°C per bit, -30 °C offset";
+CM_ SG_ 258 evapOutletT "Evaporator outlet temperature, 0=-30 °C, 0xfe = 97 °C, .5 °C per bit, -30 °C offset";
+CM_ SG_ 258 recircSwState "Recirc switch state, 1 = recirc is on";
+CM_ SG_ 258 pumpPerc "Pump %";
+CM_ SG_ 258 heatingSwState "Heating switch state, 1 = heating is on";
+CM_ SG_ 258 heatingPerc "Heating %";
+CM_ SG_ 258 coolingSwState "Cooling switch state, 1 = cooling is on";
+CM_ SG_ 258 coolingPerc "Cooling %";
+CM_ SG_ 257 cmdDataHigh "Cmd Data High";
+CM_ SG_ 257 cmdDataLow "Cmd Data Low";
+CM_ SG_ 257 command "Command:
+0 = NOP
+1 = Reset
+2 = Initialize checksum and verify flag
+3 = Test checksum and verify flag. If valid, set the application present flag
+4 Test checksum and verify flag. Do not set application flag
+";
+CM_ SG_ 257 flags4 "•Bit 4:
+o0 = Don’t send ack frame
+o1 = send empty can frame after operation (default)
+";
+CM_ SG_ 257 flags3 "•Bit 3: 
+o0 = update address pointer manually
+o1 = increment address pointer after read/write (default)
+";
+CM_ SG_ 257 flags2 "•Bit 2:
+o0 = Don’t erase before write
+o1 = erase if on flash page border (64 bytes for 18F PIC devices), then write (default)
+";
+CM_ SG_ 257 flags1 "•Bit 1:
+o0 = Allow write after erase (default)
+o1 = No write after erase
+";
+CM_ SG_ 257 flags0 "•Bit 0:
+o0 = prevent writes (default)
+o1 = allow writes
+";
+CM_ SG_ 257 addressHigh "Address high";
+CM_ SG_ 257 addressMiddle "Address middle";
+CM_ SG_ 257 addressLow "Address low";
+CM_ BO_ 256 "Zero length message to the HVAC requesting a reboot.";
+CM_ SG_ 256 testSol1 "Test sol1 (ESS sol)";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "BusType" "";
+VAL_ 222 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 206 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 198 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 190 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 182 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 174 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 166 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 158 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 150 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 214 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 142 sheetAlarmReason 5 "High voltage" 4 "Low voltage" 3 "High temeprature" ;
+VAL_ 802 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 794 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 858 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 850 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 842 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 834 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 826 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 818 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 810 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 786 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 778 BMB_respMpex 35 "BMB time resp" 32 "BMB avg voltages" 31 "BMB version" 30 "BMB report interval resp" 29 "BMB sheet alarm reason" 28 "BMB query variable resp" 23 "BMB read ADC resp" 21 "BMB get V calibration resp" 20 "BMB set V calibration ack" 18 "BMB set low V overinde ack" 16 "BMB avg sample resp" 15 "BMB averages" 14 "BMB bleed resistors state" 12 "BMB remote reset ack" 11 "BMB sheet ack" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" ;
+VAL_ 10 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 26 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 90 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 82 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 74 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 66 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 58 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 50 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 42 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 34 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 18 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 6 VMS_mode 2 "Drive" 1 "Charge" 0 "Idle" ;
+VAL_ 6 VMS_BMB_reqMpex0 35 "BMB get time" 34 "VMS VIN1" 33 "VMS VIN0" 32 "BMB get avg voltages" 31 "BMB get version" 30 "BMB set report interval" 29 "BMB query sheet alarm reason req" 28 "BMB query variable req" 27 "BMB set balance state" 25 "BMB set shutdown state" 23 "BMB read ADC req" 22 "BMB enable EEPROM write" 21 "BMB get V calibration req" 20 "BMB set V calibration req" 18 "BMB set low V overinde req" 16 "BMB avg sample req" 15 "BMB averages" 14 "BMB get bleed resistors" 13 "BMB set bleed resistors" 12 "BMB remote reset" 11 "BMB set sheet" 10 "BMB get history" 9 "BMB clear history" 8 "BMB reset" 4 "BMB temp" 1 "VMS time" ;
+VAL_ 648 CSB_reqMpex 11 "CSB Mean iBat Buffers" 10 "CSB History" 8 "CSB Fault" 31 "CSB Self Test" 21 "CSB ADC Chan 5-9" 20 "CSB ADC Chan 0-4" 7 "CSB Serial Number" 6 "CSB iBat" 5 "CSB Report Intervals" 4 "CSB Energy" 3 "CSB Clear Faults" 1 "CSB Reset" 0 "CSB Version" ;
+VAL_ 520 CSB_reqMpex 11 "CSB Mean iBat Buffers" 10 "CSB History" 8 "CSB Fault" 31 "CSB Self Test" 21 "CSB ADC Chan 5-9" 20 "CSB ADC Chan 0-4" 7 "CSB Serial Number" 6 "CSB iBat" 5 "CSB Report Intervals" 4 "CSB Energy" 3 "CSB Clear Faults" 1 "CSB Reset" 0 "CSB Version" ;
+VAL_ 640 BSM_reqMpex 36 "BSM Open Contactor Cmd" 34 "BSM Query Precharge Data" 33 "BSM Set Odometer" 32 "BSM Get Odometer" 31 "BSM Self Test" 22 "BSM Disable Low V Checks" 21 "BSM Get ADC Chan 5-9" 20 "BSM Get ADC Chan 0-4" 19 "BSM Get Contactor Open Count" 18 "BSM En/Disable IsolationTest" 17 "BSM Report Intervals" 16 "BSM Do Isolation Test" 15 "BSM Get Isolation Resistance" 7 "BSM Clear All Faults" 6 "BSM Get Humidity and Temp" 5 "BSM Clear Non-perm Faults" 4 "BSM Get State" 3 "BSM Set State" 1 "BSM Reset" 0 "BSM Version" ;
+VAL_ 512 BSM_reqMpex 36 "BSM Open Contactor Cmd" 34 "BSM Query Precharge Data" 33 "BSM Set Odometer" 32 "BSM Get Odometer" 31 "BSM Self Test" 22 "BSM Disable Low V Checks" 21 "BSM Get ADC Chan 5-9" 20 "BSM Get ADC Chan 0-4" 19 "BSM Get Contactor Open Count" 18 "BSM En/Disable IsolationTest" 17 "BSM Report Intervals" 16 "BSM Do Isolation Test" 15 "BSM Get Isolation Resistance" 7 "BSM Clear All Faults" 6 "BSM Get Humidity and Temp" 5 "BSM Clear Non-perm Faults" 4 "BSM Get State" 3 "BSM Set State" 1 "BSM Reset" 0 "BSM Version" ;
+VAL_ 896 VMSIO_respMpex 9 "VMSIO RKE Status" 8 "VMSIO Reset GPS" 7 "VMSIO ioStateGetOutput" 6 "VMSIO openRequest" 5 "VMSIO ioStateGet" 4 "VMSIO ioSetState" 3 "VMSIO Homelink Cmd" 2 "VMSIO Get Status" 1 "VMSIO Reset" 0 "VMSIO Version" ;
+VAL_ 768 openRequest 2 "Open passenger door" 1 "Open driver door" 0 "Open trunk" ;
+VAL_ 768 ioStateSetPort 4 "Port E" 3 "Port D" 2 "Port C" 1 "Port B" 0 "Port A" ;
+VAL_ 768 homelinkData 2 "Button 3/C" 1 "Button 2/B" 0 "Button 1/A" ;
+VAL_ 768 homelinkCmd 5 "Enter default mode" 4 "Cancel current function" 3 "Query state" 2 "Start xmit button N" 1 "Program button N" 0 "Clear all buttons" ;
+VAL_ 768 VMSIO_reqMpex 9 "VMSIO RKE Status" 8 "VMSIO Reset GPS" 7 "VMSIO ioStateGetOutput" 6 "VMSIO openRequest" 5 "VMSIO ioStateGet" 4 "VMSIO ioSetState" 3 "VMSIO Homelink Cmd" 2 "VMSIO Get Status" 1 "VMSIO Reset" 0 "VMSIO Version" ;
+VAL_ 260 loadShedHVAC 1 "Inactive" 0 "Active" ;
+VAL_ 258 condenserFanStatus 2 "High" 1 "Low" 0 "Off" ;
+VAL_ 258 cabinFanStatus 3 "High" 2 "Medium" 1 "Low" 0 "Off" ;
+VAL_ 257 command 4 "Test checksum" 3 "Test checksum, set app flag" 2 "Init checksum and verify flag" 1 "Reset" 0 "NOP" ;
+VAL_ 257 flags4 1 "Erase, then write" 0 "Don't send ack frame" ;
+VAL_ 257 flags3 1 "Allow writes" 0 "Update pointer manually" ;
+VAL_ 257 flags2 1 "Erase, then write" 0 "Don't erase before write" ;
+VAL_ 257 flags1 1 "No write after erase" 0 "Allow write after erase" ;
+VAL_ 257 flags0 1 "Allow writes" 0 "Prevent writes" ;
+SIG_GROUP_ 802 VMS_BMB_Response_Sheet_04 1 :;
+SIG_GROUP_ 794 VMS_BMB_Response_Sheet_03 1 :;
+SIG_GROUP_ 858 VMS_BMB_Response_Sheet_11 1 :;
+SIG_GROUP_ 850 VMS_BMB_Response_Sheet_10 1 :;
+SIG_GROUP_ 842 VMS_BMB_Response_Sheet_09 1 :;
+SIG_GROUP_ 834 VMS_BMB_Response_Sheet_08 1 :;
+SIG_GROUP_ 826 VMS_BMB_Response_Sheet_07 1 :;
+SIG_GROUP_ 818 VMS_BMB_Response_Sheet_06 1 :;
+SIG_GROUP_ 810 VMS_BMB_Response_Sheet_05 1 :;
+SIG_GROUP_ 786 VMS_BMB_Response_Sheet_02 1 :;
+SIG_GROUP_ 778 VMS_BMB_Response_Sheet_01 1 :;
+SIG_GROUP_ 10 VMS_BMB_Request_Sheet_01 1 :;
+SIG_GROUP_ 26 VMS_BMB_Request_Sheet_03 1 :;
+SIG_GROUP_ 90 VMS_BMB_Request_Sheet_11 1 :;
+SIG_GROUP_ 82 VMS_BMB_Request_Sheet_10 1 :;
+SIG_GROUP_ 74 VMS_BMB_Request_Sheet_09 1 :;
+SIG_GROUP_ 66 VMS_BMB_Request_Sheet_08 1 :;
+SIG_GROUP_ 58 VMS_BMB_Request_Sheet_07 1 :;
+SIG_GROUP_ 50 VMS_BMB_Request_Sheet_06 1 :;
+SIG_GROUP_ 42 VMS_BMB_Request_Sheet_05 1 :;
+SIG_GROUP_ 34 VMS_BMB_Request_Sheet_04 1 :;
+SIG_GROUP_ 18 VMS_BMB_Request_Sheet_02 1 :;
+SIG_GROUP_ 6 VMS_BMB_Request 1 : major minor subminor VMS_mode contactorsClosed time;
+SIG_GROUP_ 640 BSM_Response 1 :;
+SIG_GROUP_ 512 BSM_Req 1 :;
+SIG_GROUP_ 896 VMSIO_Resp 1 : trunkOpen RKE1_pressed RKE2_pressed RKE3_pressed portC_input homelinkStatus_ portA_input portB_input portD_input portE_input portA_output portB_output portC_output portD_output portE_output RKE_seqId RKE2_PW RKE1_PW RKE3_PW homelinkStatus hoodOpen driverClosed passengerClosed SRS_happy SRS_deployed APS_onReq CDL_req LIN_RX_count BL_major BL_minor BL_subminor major subminor minor;
+SIG_GROUP_ 768 VMSIO_Req 1 : homelinkCmd homelinkData ioStateSetPort ioStateSetByte openRequest resetGPS;
+

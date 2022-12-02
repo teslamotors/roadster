@@ -1,0 +1,367 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VMS SWP
+VAL_TABLE_ SWP_get_var 8 "debug" 7 "input ports" 6 "device state" 5 "output ports" 4 "emergency power sense status" 3 "turn signal internal state" 2 "marker lamp status" 1 "hi beam status" ;
+VAL_TABLE_ interiorLamp 1 "on" 0 "off" ;
+VAL_TABLE_ SWP_req_mpex 7 "defeat headlamps" 6 "get variable" 5 "set variable" 4 "lock state" 3 "interior lamp" 2 "key state" 1 "reset" 0 "version" ;
+VAL_TABLE_ chargeENUM 3 "trickle charge" 2 "line current mode" 1 "battery current mode" 0 "battery voltage mode" ;
+VAL_TABLE_ VMS_SWP_setVariableCmd 22 "open/short report interval" 21 "device state report interval" 20 "window event debounce limit" 19 "voltage report interval" 18 "hazard sw sample rate" 17 "click on pulses" 16 "click period" 15 "hi beam shed duration" 14 "lo beam shed duration" 13 "debounce limit" 12 "window event startup defeat" 11 "window event threshold" 10 "window autodown hold time" 9 "lock/unlock flash on time" 8 "lock/unlock flash off time" 7 "lamp out turn signal on time" 6 "lamp out turn signal off time" 5 "turn signal on duration" 4 "turn signal off duration" 3 "abs shed duration" 2 "illumination level" 1 "interior fade duration" 0 "debug mode" ;
+VAL_TABLE_ VMS_SWP_lockState 3 "Panic" 2 "Lock Failed" 1 "Unlocked" 0 "Locked" ;
+VAL_TABLE_ VMS_SWP_keyState 2 "On" 1 "Accessory" 0 "Off" ;
+VAL_TABLE_ TCM_parkingPawl 6 "Unpark Stall" 5 "Unparked" 4 "Unparking" 3 "Park Stall" 2 "Parked" 1 "Parking" 0 "Off" ;
+VAL_TABLE_ SWP_VMS_voltageReport 3 "High" 2 "Low" 1 "Off" 0 "OK" ;
+VAL_TABLE_ pm_shiftRequest 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park" 0 "Invalid" ;
+VAL_TABLE_ pm_shiftState 4 "Forward" 3 "Neutral" 2 "Reverse" 1 "Park (unused)" 0 "Invalid" ;
+VAL_TABLE_ DBG_SHF_Diag2 1 "All LEDs Off" 0 "All LEDs On" ;
+VAL_TABLE_ DBG_SHF_Diag 1 "Red" 0 "Green" ;
+VAL_TABLE_ driveConfig 3 "Unused" 2 "Unused" 1 "Sport" 0 "Base" ;
+VAL_TABLE_ evseState 5 "Pilot Fault" 4 "Fault" 3 "Charging" 2 "Connected" 1 "Idle" 0 "Unknown" ;
+VAL_TABLE_ tcmType 2 "Xtrac" 1 "Magna" 0 "no TCM" ;
+VAL_TABLE_ driveMode 5 "Tow Mode" 4 "Performance" 3 "Max Range" 2 "Full" 1 "Storage" 0 "Standard" ;
+VAL_TABLE_ chargeEnd 3 "Charge Aborted" 2 "VMS Stopped" 1 "Charge Complete" 0 "None" ;
+VAL_TABLE_ chargeMode 1 "Charge" 0 "Drive" ;
+VAL_TABLE_ TCM_shiftStage 5 "Ramp On" 4 "Ramp Off" 3 "Park" 2 "Neutral" 1 "Rev Gear" 0 "Fwd Gear" ;
+VAL_TABLE_ TCM_unParkEffort 3 "hardest" 2 "harder" 1 "hard" 0 "soft" ;
+VAL_TABLE_ TCM_parkRequest 2 "Unpark" 1 "Park" 0 "Off" ;
+VAL_TABLE_ omitecDiagMode 1 "Activate" 0 "Deactivate" ;
+VAL_TABLE_ omitecDiagCmd 128 "Activate/Deactivate Diag Mode" 4 "Brake Light Command" 2 "Pole Fan Command" 1 "Motor Fan Command" ;
+VAL_TABLE_ PECState 4 "STATE_ENABLE" 3 "STATE_FAULT" 2 "STATE_CLEAR_FAULT" 1 "STATE_STANDBY" 0 "STATE_INVALID" ;
+VAL_TABLE_ PECMode 4 "MODE_DYNO" 3 "MODE_HEATESS" 2 "MODE_CHARGE" 1 "MODE_DRIVE" 0 "MODE_UNDEF" ;
+VAL_TABLE_ TCM_gearSelection 4 "D" 3 "N" 2 "R" 1 "P" 0 "Invalid" ;
+
+
+BO_ 3221225472 VECTOR__INDEPENDENT_SIG_MSG: 0 Vector__XXX
+ SG_ rearFogLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ gloveBoxLatch : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ daytimeRunningLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ absEventInProgress : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _12V_batteryTestActive : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ _12V_batteryState : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ status_12V_battery : 0|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ _12V_battery_V : 0|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ buildFlags : 0|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setVarCmdValue : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setVarCmd : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ armed : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ DRL_enabled : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sideTurnSigalsPresent : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ sideMarkersPresent : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ APS_Off : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ defeatHeadlamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ interiorLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ repeatMessageIndicator : 0|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lockState : 0|7@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ keyState : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ shortRightWindowMotor : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightSideTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightRearTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightLowBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightHighBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightFrontTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRearFogLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRadio : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortMarkerLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftWindowMotor : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftSideTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftRearTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftLowBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftHighBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftFrontTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightWindowMotor : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightSideTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightRearTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightLowBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightHighBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightFrontTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRearFogLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRadio : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openMarkerLamps : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftWindowMotor : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftSideTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftRearTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftLowBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftHighBeamLamp : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftFrontTurnSignal : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1048 SWP_VMS_SetVarResp: 1 Vector__XXX
+
+BO_ 1046 SWP_VMS_DefeatHeadlampsResp: 1 Vector__XXX
+
+BO_ 1042 SWP_VMS_InteriorLampResp: 1 Vector__XXX
+
+BO_ 1040 SWP_VMS_KeyStateResp: 1 Vector__XXX
+
+BO_ 1038 SWP_VMS_reset_resp: 1 Vector__XXX
+
+BO_ 1032 VMS_SWP_request: 8 Vector__XXX
+ SG_ asynchInt m0 : 56|8@1+ (0.1,0) [0|0] "s" Vector__XXX
+ SG_ getVarCmd m6 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setVarCmdValue m5 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ setVarCmd m5 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ repeatMessageIndicator m4 : 31|1@1- (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lockState m4 : 24|7@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ interiorLamp m3 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ keyState m2 : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ VMS_SWP_req_mpex M : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 1050 SWP_VMS_DeviceState: 8 SWP
+ SG_ debugData m8 : 16|48@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortJ m5 : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortH m5 : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortG m5 : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortD m5 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortC m5 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortB m7 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ PortA m7 : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ shortLeftWindowSwitch m6 : 41|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ shortRightWindowSwitch m6 : 40|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ shortRightWindowMotor m6 : 43|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightRearTurnSignal m6 : 46|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightFrontTurnSignal m6 : 47|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortMarkerLamps m6 : 39|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftWindowMotor m6 : 42|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftRearTurnSignal m6 : 44|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftFrontTurnSignal m6 : 45|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightWindowMotor m6 : 59|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightRearTurnSignal m6 : 62|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightLowBeamLamp m6 : 53|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightHighBeamLamp m6 : 51|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openRightFrontTurnSignal m6 : 63|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openMarkerLamps m6 : 55|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftWindowMotor m6 : 58|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftRearTurnSignal m6 : 60|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftLowBeamLamp m6 : 54|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftHighBeamLamp m6 : 52|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ openLeftFrontTurnSignal m6 : 61|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightLowBeamLamp m6 : 37|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortRightHighBeamLamp m6 : 35|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftLowBeamLamp m6 : 38|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ shortLeftHighBeamLamp m6 : 36|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ absShort m6 : 33|1@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SWP_resp_mpex2 M : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SWP_resp_mpex1 : 0|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ leftTurnSignal m6 : 30|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightWindowRunningUp m6 : 21|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightWindowRunningDown m6 : 22|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightTurnSignal m6 : 31|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ rightSeatHeater m6 : 29|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ radioOn m6 : 26|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ markers m6 : 18|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ lowBeams m6 : 16|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ highBeams m6 : 27|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftWindowRunningUp m6 : 19|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftWindowRunningDown m6 : 20|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ leftSeatHeater m6 : 28|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ interiorLamp m6 : 25|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ hazards m6 : 17|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+ SG_ emergPwrSense m6 : 23|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 960 SWP_VMS_StatusReport: 8 SWP
+ SG_ maxCAN_Rx_num : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ curCAN_Rx_num : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultContext2 : 32|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ faultContext1 : 8|16@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ low12VBattery : 0|1@1+ (1,0) [0|0] "Flag" Vector__XXX
+
+BO_ 1034 SWP_VMS_VoltageReport: 8 SWP
+ SG_ status_temp : 58|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_5V : 48|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_22V : 52|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ temperature : 40|8@1- (1,0) [0|0] "Deg C" Vector__XXX
+ SG_ _22V_voltage : 16|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ _5V_voltage : 0|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ _12V_voltage : 8|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ status_STBY : 54|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_SRS : 56|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ status_12V : 50|2@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ SRS_voltage : 32|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+ SG_ STBY_voltage : 24|8@1+ (0.125,0) [0|0] "V" Vector__XXX
+
+BO_ 1036 SWP_VMS_VCmdVersion: 8 SWP
+ SG_ bootSubMinor : 48|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMinor : 40|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ bootMajor : 32|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appSubMinor : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMinor : 16|8@1+ (1,0) [0|0] "" Vector__XXX
+ SG_ appMajor : 8|8@1+ (1,0) [0|0] "" Vector__XXX
+
+
+
+CM_ BO_ 3221225472 "This is a message for not used signals, created by Vector CANdb++ DBC OLE DB Provider.";
+CM_ SG_ 3221225472 rearFogLamps "(1=Device active)  rear fog lamps";
+CM_ SG_ 3221225472 gloveBoxLatch "(1=Device active)  glove box latch";
+CM_ SG_ 3221225472 daytimeRunningLamps "(1=Device active)  daytime running lamps";
+CM_ SG_ 3221225472 absEventInProgress "(1=Device active)  abs event in progress";
+CM_ SG_ 3221225472 _12V_batteryTestActive "(1=Device active)  12v battery test in progress";
+CM_ SG_ 3221225472 _12V_batteryState "(1=Device active)  12v battery state";
+CM_ SG_ 3221225472 status_12V_battery "12V Battery Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 3221225472 _12V_battery_V "12V Battery voltage (5.3 format)";
+CM_ SG_ 3221225472 buildFlags "Build Flags L
+Build Flags H";
+CM_ SG_ 3221225472 DRL_enabled "Daylight Running Lights enabled";
+CM_ SG_ 3221225472 sideMarkersPresent "Side Markers present";
+CM_ SG_ 3221225472 APS_Off "APS Off";
+CM_ SG_ 3221225472 defeatHeadlamps "defeat headlamps";
+CM_ SG_ 3221225472 interiorLamp "Interior Lamp state: 0=Off, 1=On";
+CM_ SG_ 3221225472 repeatMessageIndicator "VMS ? SWP: State Command Repeat Message indicator bit";
+CM_ SG_ 3221225472 lockState "Lock State: 0=Locked, 1=Unlocked, 2=Lock Failed, 3=Panic";
+CM_ SG_ 3221225472 keyState "Key State:  0=Off, 1=Accessory, 2=On";
+CM_ SG_ 3221225472 shortRightWindowMotor "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRightSideTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRightRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRightLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRightHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRightFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRearFogLamps "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortRadio "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortMarkerLamps "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftWindowMotor "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftSideTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 3221225472 shortLeftFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 3221225472 openRightWindowMotor "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRightSideTurnSignal "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRightRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRightLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRightHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRightFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRearFogLamps "Open Circuit Indicator";
+CM_ SG_ 3221225472 openRadio "Open Circuit Indicator";
+CM_ SG_ 3221225472 openMarkerLamps "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftWindowMotor "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftSideTurnSignal "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 3221225472 openLeftFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 1032 repeatMessageIndicator "VMS ? SWP: State Command Repeat Message indicator bit";
+CM_ SG_ 1032 lockState "Lock State: 0=Locked, 1=Unlocked, 2=Lock Failed, 3=Panic";
+CM_ SG_ 1032 interiorLamp "(1=Device active)  interior lamp active";
+CM_ SG_ 1032 keyState "Key State:  0=Off, 1=Accessory, 2=On";
+CM_ SG_ 1050 shortLeftWindowSwitch "Short Circuit Indicator";
+CM_ SG_ 1050 shortRightWindowSwitch "Short Circuit Indicator";
+CM_ SG_ 1050 shortRightWindowMotor "Short Circuit Indicator";
+CM_ SG_ 1050 shortRightRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 1050 shortRightFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 1050 shortMarkerLamps "Short Circuit Indicator";
+CM_ SG_ 1050 shortLeftWindowMotor "Short Circuit Indicator";
+CM_ SG_ 1050 shortLeftRearTurnSignal "Short Circuit Indicator";
+CM_ SG_ 1050 shortLeftFrontTurnSignal "Short Circuit Indicator";
+CM_ SG_ 1050 openRightWindowMotor "Open Circuit Indicator";
+CM_ SG_ 1050 openRightRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 1050 openRightLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 1050 openRightHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 1050 openRightFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 1050 openMarkerLamps "Open Circuit Indicator";
+CM_ SG_ 1050 openLeftWindowMotor "Open Circuit Indicator";
+CM_ SG_ 1050 openLeftRearTurnSignal "Open Circuit Indicator";
+CM_ SG_ 1050 openLeftLowBeamLamp "Open Circuit Indicator";
+CM_ SG_ 1050 openLeftHighBeamLamp "Open Circuit Indicator";
+CM_ SG_ 1050 openLeftFrontTurnSignal "Open Circuit Indicator";
+CM_ SG_ 1050 shortRightLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 1050 shortRightHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 1050 shortLeftLowBeamLamp "Short Circuit Indicator";
+CM_ SG_ 1050 shortLeftHighBeamLamp "Short Circuit Indicator";
+CM_ SG_ 1050 absShort "(1=Device active)  abs event in progress";
+CM_ SG_ 1050 leftTurnSignal "(1=Device active)  left turn signal active";
+CM_ SG_ 1050 rightWindowRunningUp "(1=Device active)  rightWindowRunningUp";
+CM_ SG_ 1050 rightWindowRunningDown "(1=Device active)  rightWindowRunningDown";
+CM_ SG_ 1050 rightTurnSignal "(1=Device active)  right turn signal active";
+CM_ SG_ 1050 rightSeatHeater "(1=Device active)  right seat heater active";
+CM_ SG_ 1050 radioOn "(1=Device active)  radio on";
+CM_ SG_ 1050 markers "(1=Device active)  markers";
+CM_ SG_ 1050 lowBeams "(1=Device active)  ";
+CM_ SG_ 1050 highBeams "(1=Device active)  high beams active";
+CM_ SG_ 1050 leftWindowRunningUp "(1=Device active)  leftWindowRunningUp";
+CM_ SG_ 1050 leftWindowRunningDown "(1=Device active)  leftWindowRunningDown";
+CM_ SG_ 1050 leftSeatHeater "(1=Device active)  left seat heater active";
+CM_ SG_ 1050 interiorLamp "(1=Device active)  interior lamp active";
+CM_ SG_ 1050 hazards "(1=Device active)  hazards";
+CM_ SG_ 1050 emergPwrSense "(1=Device active)  emerg pwr sense input active";
+CM_ SG_ 960 maxCAN_Rx_num "max CAN RX FIFO number of entries";
+CM_ SG_ 960 curCAN_Rx_num "current CAN RX FIFO number of entries";
+CM_ SG_ 960 faultContext2 "fault context, in order of priority (least first), little-endian
+•	EE checksum, EEPROM for fault bit 1
+•	battery voltage limit for fault bit 0
+•	C1RXOVF register for CAN RX HW overflow (fault bit 2)
+•	open/short limit for O/S bytes 0..3
+";
+CM_ SG_ 960 faultContext1 "fault context, in order of priority (least first), little-endian
+•	EE checksum, RAM for fault bit 1
+•	measured battery voltage for fault bit 0
+•	C1RXFUL register for CAN RX HW overflow (fault bit 2)
+•	measured open/short value for O/S bytes 0..3
+";
+CM_ SG_ 960 low12VBattery "Low 12V Battery indication";
+CM_ SG_ 1034 status_temp "+12V Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 status_5V "+12V Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 status_22V "+12V Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 status_STBY "Standby Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 status_SRS "SRS Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 status_12V "+12V Status bits: 00=OK, 01=Off, 10=Low, 11=High";
+CM_ SG_ 1034 SRS_voltage "SRS voltage (5.3 format)";
+CM_ SG_ 1034 STBY_voltage "STBY voltage (5.3 format)";
+CM_ SG_ 1036 bootSubMinor "Bootloader Sub-minor Number";
+CM_ SG_ 1036 bootMinor "Bootloader Minor Number";
+CM_ SG_ 1036 bootMajor "Bootloader Major Number";
+CM_ SG_ 1036 appSubMinor "Software Sub-minor Number";
+CM_ SG_ 1036 appMinor "Software Minor Number";
+CM_ SG_ 1036 appMajor "Software Major Number";
+BA_DEF_ SG_  "FieldType" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "FieldType" "";
+BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 3221225472 status_12V_battery 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 3221225472 setVarCmd 22 "window event debounce limit" 21 "device state report interval" 20 "window event debounce limit" 19 "voltage report interval" 18 "hazard sw sample rate" 17 "click on pulses" 16 "click period" 15 "hi beam shed duration" 14 "lo beam shed duration" 13 "debounce limit" 12 "window event startup defeat" 11 "window event threshold" 10 "window autodown hold time" 9 "lock/unlock flash on time" 8 "lock/unlock flash off time" 7 "lamp out turn signal on time" 6 "lamp out turn signal off time" 5 "turn signal on duration" 4 "turn signal off duration" 3 "abs shed duration" 2 "illumination level" 1 "interior fade duration" 0 "debug mode" ;
+VAL_ 3221225472 lockState 3 "Panic" 2 "Lock Failed" 1 "Unlocked" 0 "Locked" ;
+VAL_ 3221225472 keyState 2 "On" 1 "Accessory" 0 "Off" ;
+VAL_ 1032 getVarCmd 8 "debug" 7 "input ports" 6 "device state" 5 "output ports" 4 "emergency power sense status" 3 "turn signal internal state" 2 "marker lamp status" 1 "hi beam status" ;
+VAL_ 1032 setVarCmd 22 "window event debounce limit" 21 "device state report interval" 20 "window event debounce limit" 19 "voltage report interval" 18 "hazard sw sample rate" 17 "click on pulses" 16 "click period" 15 "hi beam shed duration" 14 "lo beam shed duration" 13 "debounce limit" 12 "window event startup defeat" 11 "window event threshold" 10 "window autodown hold time" 9 "lock/unlock flash on time" 8 "lock/unlock flash off time" 7 "lamp out turn signal on time" 6 "lamp out turn signal off time" 5 "turn signal on duration" 4 "turn signal off duration" 3 "abs shed duration" 2 "illumination level" 1 "interior fade duration" 0 "debug mode" ;
+VAL_ 1032 lockState 3 "Panic" 2 "Lock Failed" 1 "Unlocked" 0 "Locked" ;
+VAL_ 1032 interiorLamp 1 "on" 0 "off" ;
+VAL_ 1032 keyState 2 "On" 1 "Accessory" 0 "Off" ;
+VAL_ 1032 VMS_SWP_req_mpex 7 "defeat headlamps" 6 "get variable" 5 "set variable" 4 "lock state" 3 "interior lamp" 2 "key state" 1 "reset" 0 "version" ;
+VAL_ 1034 status_temp 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 1034 status_5V 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 1034 status_22V 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 1034 status_STBY 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 1034 status_SRS 2 "High" 1 "Low" 0 "OK" ;
+VAL_ 1034 status_12V 2 "High" 1 "Low" 0 "OK" ;
+SIG_GROUP_ 1032 VMS_SWP_req 1 : getVarCmd asynchInt setVarCmd setVarCmdValue repeatMessageIndicator lockState interiorLamp keyState;
+SIG_GROUP_ 1050 SWP_resp 1 : debugData PortA PortB PortC PortD PortG PortH PortJ shortRightWindowSwitch shortLeftWindowSwitch openLeftFrontTurnSignal openLeftHighBeamLamp openLeftLowBeamLamp openLeftRearTurnSignal openLeftWindowMotor openMarkerLamps openRightFrontTurnSignal openRightHighBeamLamp openRightRearTurnSignal openRightLowBeamLamp openRightWindowMotor shortLeftFrontTurnSignal shortLeftRearTurnSignal shortLeftWindowMotor shortMarkerLamps shortRightFrontTurnSignal shortRightRearTurnSignal shortRightWindowMotor shortRightHighBeamLamp shortRightLowBeamLamp shortLeftLowBeamLamp shortLeftHighBeamLamp absShort emergPwrSense hazards interiorLamp leftSeatHeater leftWindowRunningDown leftWindowRunningUp highBeams lowBeams markers radioOn rightSeatHeater rightTurnSignal rightWindowRunningDown rightWindowRunningUp leftTurnSignal;
+
